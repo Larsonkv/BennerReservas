@@ -1,0 +1,75 @@
+﻿@using Benner.Tecnologia.Common
+@using Benner.Tecnologia.Wes.Components
+@using Benner.Tecnologia.Common.Components
+
+@helper Tile(string description, string value, string color, string icon)
+{
+    <div class="dashboard-stat @color">
+        <div class="visual">
+            <i class="@icon"></i>
+        </div>
+        <div class="details">
+            <div class="number">
+                @value
+            </div>
+            <div class="desc">
+                @description
+            </div>
+        </div>
+    </div>
+}
+@helper Chart(string id, string description, string icon)
+{
+    <div class="portlet solid bordered grey-cararra">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="@icon"></i>@description
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div id="@id" class="chart">
+            </div>
+        </div>
+    </div>
+}
+
+@functions {
+    public static string GridLink(string url, string entityDefinitionName, string defaultFilterName, bool modal, CommandModalSize modalSize)
+    {
+        var linkDefinition = new GridLinkDefinition();
+
+        linkDefinition.Url = url;
+        linkDefinition.TargetSystemInstanceName = BennerContext.Administration.DefaultSystemInstanceName;
+        linkDefinition.TargetEntityDefinitionName = entityDefinitionName;
+        linkDefinition.DefaultFilterName = defaultFilterName;
+        linkDefinition.IsModalPage = HttpContext.Current.IsModalPage() || modal;
+        linkDefinition.IsModalNavigation = HttpContext.Current.IsModalPage();
+
+        var href = Benner.Tecnologia.Wes.Components.UriBuilder.Create(linkDefinition, modal: modal, modalSize: modalSize, absoluteUrl: true);
+
+        return href;
+    }
+
+    public static string FormLink(string url, string entityDefinitionName, Handle handle, bool modal)
+    {
+        return FormLink(url, entityDefinitionName, handle, FormLinkDefinition.FormMode.View, modal, CommandModalSize.Default);
+    }
+
+    public static string FormLink(string url, string entityDefinitionName, Handle handle, FormLinkDefinition.FormMode formMode, bool modal, CommandModalSize modalSize)
+    {
+        var linkDefinition = new FormLinkDefinition();
+
+        linkDefinition.Url = url;
+        linkDefinition.TargetSystemInstanceName = BennerContext.Administration.DefaultSystemInstanceName;
+        linkDefinition.TargetEntityDefinitionName = entityDefinitionName;
+        linkDefinition.IsModalPage = HttpContext.Current.IsModalPage() || modal;
+        linkDefinition.IsModalNavigation = HttpContext.Current.IsModalPage();
+        linkDefinition.TargetFormMode = formMode;
+        linkDefinition.WhereClause = new WhereClause("A.HANDLE = :HANDLE", new Parameter("HANDLE", handle));
+        linkDefinition.TargetEntityHandle = handle;
+
+        var href = Benner.Tecnologia.Wes.Components.UriBuilder.Create(linkDefinition, modal: modal, modalSize: modalSize, absoluteUrl: true);
+
+        return href;
+    }
+}

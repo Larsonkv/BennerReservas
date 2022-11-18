@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.33026.149
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Reservas", "http://localhost/Reservas", "{34746852-F53B-48D2-8414-730AFEA9D4A1}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/Reservas"
+		Debug.AspNetCompiler.PhysicalPath = "WebApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Reservas\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Reservas"
+		Release.AspNetCompiler.PhysicalPath = "WebApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Reservas\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "WebApp\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benner.Reservas[Business]", "Business\Benner.Reservas\Benner.Reservas[Business].csproj", "{A4AFD4E6-F1B3-439D-AE40-3F1255F18F88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34746852-F53B-48D2-8414-730AFEA9D4A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34746852-F53B-48D2-8414-730AFEA9D4A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34746852-F53B-48D2-8414-730AFEA9D4A1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{34746852-F53B-48D2-8414-730AFEA9D4A1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A4AFD4E6-F1B3-439D-AE40-3F1255F18F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4AFD4E6-F1B3-439D-AE40-3F1255F18F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4AFD4E6-F1B3-439D-AE40-3F1255F18F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4AFD4E6-F1B3-439D-AE40-3F1255F18F88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80847D84-0238-4C24-AD15-BE8528E15B57}
+	EndGlobalSection
+EndGlobal

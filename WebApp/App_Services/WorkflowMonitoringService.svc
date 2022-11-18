@@ -1,0 +1,427 @@
+<%@ ServiceHost Language="C#"
+    Service="WorkflowMonitoringService"
+    Factory="Benner.Tecnologia.EnterpriseServiceLibrary.DynamicServiceHostFactory" %>
+
+using System;
+using System.ComponentModel;
+using System.ServiceModel;
+using System.ServiceModel.Activation;
+using System.ServiceModel.Description;
+using System.ServiceModel.Web;
+using Benner.Tecnologia.Common;
+using Benner.Tecnologia.Common.EnterpriseServiceLibrary;
+using Benner.Tecnologia.EnterpriseServiceLibrary;
+using Benner.Tecnologia.Workflow.Services.DataContracts.RequestResponse;
+using Benner.Tecnologia.Business.Cache;
+using Benner.Tecnologia.Business;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Caching;
+
+[ServiceContract]
+[DynamicHost(AllowedBindings = BindingType.BasicHttp | BindingType.WebHttp,
+    BasicHttpAddress = "",
+    BasicHttpsConfigurationName = "basicHttpsDefaultConfiguration",
+    WebHttpAddress = "api",
+    WebHttpsConfigurationName = "webHttpsDefaultConfiguration")]
+public interface IWorkflowMonitoringService : IAuthentication
+{
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de instâncias executadas.")]
+    long ExecutedInstances(DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de tarefas executadas por um determinado usuário.")]
+    long ExecutedTasksByUser(long user, DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de instâncias atrasadas.")]
+    long DelayedInstances(DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de tarefas atrasadas por um determinado usuário.")]
+    long DelayedTasksByUser(long user, DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de instâncias em execução.")]
+    long InstancesInProgress(DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de tarefas em execução por um determinado usuário.")]
+    long TasksInProgressByUser(long user, DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de instâncias com erro.")]
+    long InstancesWithError(DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de instâncias iniciadas.")]
+    long StartedInstances(DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de instâncias iniciadas por um determinado usuário.")]
+    long StartedInstancesByUser(long user, DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna o tempo médio de execução dos processos.")]
+    AverageProcessExecutionTimeResponse AverageProcessExecutionTime(DateTime? startDate, DateTime? endDate);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+    [Description("Retorna a quantidade de tarefas executadas e em atraso de um determinado usuário, agrupadas por mês.")]
+    TasksPerMonthByUserResponse TasksPerMonthByUser(long user, DateTime? startDate, DateTime? endDate);
+}
+
+public class WorkflowMonitoringService : ServiceBase, IWorkflowMonitoringService
+{
+    private static BusinessCacheProvider<object> _cache = new BusinessCacheProvider<object>("wfl-monitoring-service");
+
+    private Entities<EntityBase> GetResults(string sql, IList<Parameter> parameters)
+    {
+        var query = new Query(sql, parameters.ToArray());
+
+        return query.Execute();
+    }
+
+    public long ExecutedInstances(DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("total-executed-instances-{0}-{1}",
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+
+        var sql = WorkflowHelper.GetSqlExecutedInstances();
+        sql += WorkflowHelper.EnsureRangeDates("I", parameters, startDate, endDate, "TERMINO", "TERMINO");
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+    }
+
+    public long ExecutedTasksByUser(long user, DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("total-executed-instances-by-user-{0}-{1}-{2}",
+            user,
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+
+        var sql = WorkflowHelper.GetSqlExecutedTasksByUser();
+        sql = string.Format(sql, WorkflowHelper.EnsureUserAndRangeDates("T", parameters, user, startDate, endDate));
+        sql += ")";
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+    }
+
+    public long DelayedInstances(DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("total-delayed-instances-{0}-{1}",
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+
+        var sql = WorkflowHelper.GetSqlDelayedInstances();
+        sql += WorkflowHelper.EnsureRangeDates("I", parameters, startDate, endDate);
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+    }
+
+    public long DelayedTasksByUser(long user, DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("total-delayed-instances-by-user-{0}-{1}-{2}",
+            user,
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+        bool userHasReplacement = WorkflowHelper.GetUsersReplaced(user).Length > 0;
+
+        var sql = "SELECT COUNT(1) TOTAL FROM Z_WFTAREFAS A WHERE ";
+        sql += WorkflowHelper.GetSqlDelayedTasksByUser(userHasReplacement);
+        parameters.Add(new Parameter("USUARIO", user));
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+    }
+
+    public long InstancesInProgress(DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("total-instances-inprogress-{0}-{1}",
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+
+        var sql = WorkflowHelper.GetSqlInstancesInProgress();
+        sql += WorkflowHelper.EnsureRangeDates("I", parameters, startDate, endDate);
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+
+    }
+
+    public long TasksInProgressByUser(long user, DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("total-intances-inprogress-by-user-{0}-{1}-{2}",
+            user,
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+        bool userHasReplacement = WorkflowHelper.GetUsersReplaced(user).Length > 0;
+
+        var sql = "SELECT COUNT(1) TOTAL FROM Z_WFTAREFAS A WHERE ";
+        sql += WorkflowHelper.GetSqlTasksInProgressByUser(userHasReplacement);
+        parameters.Add(new Parameter("USUARIO", user));
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+
+    }
+
+    public long InstancesWithError(DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("total-instances-error-{0}-{1}",
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+
+        var sql = WorkflowHelper.GetSqlInstancesWithError();
+        sql += WorkflowHelper.EnsureRangeDates("I", parameters, startDate, endDate, "INICIO", "INICIO");
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+
+    }
+
+    public long StartedInstances(DateTime? startDate, DateTime? endDate)
+    {
+
+        var cacheKey = string.Format("total-started-instances-{0}-{1}",
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+
+        var sql = WorkflowHelper.GetSqlStartedInstances();
+        var rangeDates = WorkflowHelper.EnsureRangeDates("I", parameters, startDate, endDate, "INICIO", "INICIO");
+
+        if (!string.IsNullOrEmpty(rangeDates))
+            sql = sql + " WHERE 1 = 1 " + rangeDates;
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+
+    }
+
+    public long StartedInstancesByUser(long user, DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("total-started-instances-by-user-{0}-{1}-{2}",
+            user,
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return long.Parse(cachedValue.ToString());
+
+        var parameters = new List<Parameter>();
+
+        var sql = WorkflowHelper.GetSqlStartedInstancesByUser();
+        sql += WorkflowHelper.EnsureUserAndRangeDates("I", parameters, user, startDate, endDate);
+
+        var results = GetResults(sql, parameters);
+
+        var result = results[0]["TOTAL"].GetInt64();
+
+        _cache.Set(cacheKey, result, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return result;
+
+    }
+
+    public AverageProcessExecutionTimeResponse AverageProcessExecutionTime(DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("average-process-execution-time-{0}-{1}",
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return cachedValue as AverageProcessExecutionTimeResponse;
+
+        var parameters = new List<Parameter>();
+
+        var sql = WorkflowHelper.GetSqlAverageProcessExecutionTime();
+        sql = string.Format(sql, WorkflowHelper.EnsureRangeDates("A", parameters, startDate, endDate));
+
+        var results = GetResults(sql, parameters);
+
+        var response = new AverageProcessExecutionTimeResponse();
+
+        foreach (var entity in results)
+        {
+            response.Processes.Add(new AverageProcessExecutionTime { Process = entity["PROCESSO"].GetString(), ExecutionTime = entity["DURACAO"].GetInt32() });
+        }
+
+        _cache.Set(cacheKey, response, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return response;
+    }
+
+    public TasksPerMonthByUserResponse TasksPerMonthByUser(long user, DateTime? startDate, DateTime? endDate)
+    {
+        var cacheKey = string.Format("executed-delayed-tasks-by-user-{0}-{1}-{2}",
+            user,
+            startDate == null ? "" : startDate.Value.ToShortDateString(),
+            endDate == null ? "" : endDate.Value.ToShortDateString());
+
+        var cachedValue = _cache.Get(cacheKey);
+
+        if (cachedValue != null)
+            return cachedValue as TasksPerMonthByUserResponse;
+
+        var parametersExecutedTasks = new List<Parameter>();
+
+        var sqlExecutedTasks = WorkflowHelper.GetSqlExecutedTasksByUserPerMonth();
+        sqlExecutedTasks = string.Format(sqlExecutedTasks, WorkflowHelper.EnsureUserAndRangeDates("T", parametersExecutedTasks, user, startDate, endDate));
+        sqlExecutedTasks += ")";
+        sqlExecutedTasks += WorkflowHelper.GetSqlExecutedTasksByUserPerMonthGroupBy();
+
+        var parametersDelayedTasks = new List<Parameter>();
+
+        var sqlDelayedTasks = WorkflowHelper.GetSqlDelayedTasksByUserPerMonth();
+        sqlDelayedTasks = string.Format(sqlDelayedTasks, WorkflowHelper.EnsureUserAndRangeDates("T", parametersDelayedTasks, user, startDate, endDate));
+        sqlDelayedTasks += ")";
+        sqlDelayedTasks += WorkflowHelper.GetSqlDelayedTasksByUserPerMonthGroupBy();
+
+        var response = new TasksPerMonthByUserResponse();
+
+        var executedTasks = GetResults(sqlExecutedTasks, parametersExecutedTasks);
+
+        foreach (var executedTask in executedTasks)
+        {
+            response.Tasks.Add(new ExecutedAndDelayedTasks
+            {
+                Month = executedTask["MES"].GetInt32(),
+                Year = executedTask["ANO"].GetInt32(),
+                Executed = executedTask["TOTAL"].GetInt32()
+            });
+        }
+
+        var delayedTasks = GetResults(sqlDelayedTasks, parametersDelayedTasks);
+
+        foreach (var delayedTask in delayedTasks)
+        {
+            var task =
+                response.Tasks.FirstOrDefault(
+                    x => x.Month == delayedTask["MES"].GetInt32() && x.Year == delayedTask["ANO"].GetInt32());
+
+            if (task == null)
+                continue;
+
+            task.Delayed = delayedTask["TOTAL"].GetInt32();
+        }
+
+        _cache.Set(cacheKey, response, DateTime.Now.AddMinutes(BennerConfiguration.WorkflowMonitoringServiceCacheExpiration), CacheItemPriority.Normal);
+
+        return response;
+    }
+}

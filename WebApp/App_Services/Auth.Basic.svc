@@ -1,0 +1,141 @@
+<%@ ServiceHost Language="C#" 
+    Service="BasicHttpAuthService" 
+    Factory="BasicHttpAuthServiceHostFactory" %>
+
+using System;
+using System.ServiceModel;
+using System.ServiceModel.Activation;
+using System.ServiceModel.Description;
+using Benner.Tecnologia.EnterpriseServiceLibrary.TokenAuthentication;
+using Benner.Tecnologia.EnterpriseServiceLibrary;
+using System.Web;
+using Benner.Tecnologia.Common.Exceptions;
+using System.ServiceModel.Web;
+using System.Runtime.Serialization;
+using System.Net;
+
+public class BasicHttpAuthServiceHostFactory : ServiceHostFactory
+{
+    protected override ServiceHost CreateServiceHost(Type serviceType, Uri[] baseAddresses)
+    {
+        ServiceHost host = new ServiceHost(serviceType, baseAddresses);
+        Type serviceContractType = typeof(BasicHttpAuthService);
+
+        // BasicHttpBinding
+        if (HostFactoryHelper.ContainsHttpScheme(baseAddresses))
+            host.AddServiceEndpoint(serviceContractType, new BasicHttpBinding(), "");
+
+        // Colocando HTTPS quando está ativado e quanto existe a configuração no .config.
+        // Mais detalhes em: http://wiki.benner.com.br/wiki/index.php?title=Servi%C3%A7os_ESL_com_protocolo_SOAP_e_HTTPS
+        if (HostFactoryHelper.ContainsHttpsScheme(baseAddresses) && HostFactoryHelper.ContainsBasicHttpBindingConfiguration("basicHttpsDefaultConfiguration"))
+            host.AddServiceEndpoint(serviceContractType, new BasicHttpBinding("basicHttpsDefaultConfiguration") { Name = "BasicHttpsBinding" }, "");
+        
+        // Mantendo o endereço ao solicitar wsdl
+        if (!host.Description.Behaviors.Contains(typeof(UseRequestHeadersForMetadataAddressBehavior)))
+        {
+            var requestHeadersForMetadataAddresBehavior = new UseRequestHeadersForMetadataAddressBehavior();
+            
+            // para quando for http
+            if (HostFactoryHelper.ContainsHttpScheme(baseAddresses))
+                requestHeadersForMetadataAddresBehavior.DefaultPortsByScheme.Add("http", HostFactoryHelper.ReturnHttpPort(baseAddresses));
+            
+            // para quando for https
+            if (HostFactoryHelper.ContainsHttpsScheme(baseAddresses))
+                requestHeadersForMetadataAddresBehavior.DefaultPortsByScheme.Add("https", HostFactoryHelper.ReturnHttpsPort(baseAddresses));
+            
+            host.Description.Behaviors.Add(requestHeadersForMetadataAddresBehavior);
+        }
+        
+        // Service metadata
+        if (!host.Description.Behaviors.Contains(typeof(ServiceMetadataBehavior)))
+            host.Description.Behaviors.Add(new ServiceMetadataBehavior());
+        ServiceMetadataBehavior smb = host.Description.Behaviors[typeof(ServiceMetadataBehavior)] as ServiceMetadataBehavior;
+        smb.HttpGetEnabled = true;
+
+        if (HostFactoryHelper.ContainsHttpsScheme(baseAddresses))
+        {
+            smb.HttpsGetEnabled = true;
+        }
+        
+        // Service Debug
+        ServiceDebugBehavior sdb = host.Description.Behaviors.Find<ServiceDebugBehavior>();
+        sdb.IncludeExceptionDetailInFaults = false;
+        return host;
+    }
+}
+
+[ServiceContract(
+    SessionMode = SessionMode.NotAllowed)]
+[ServiceBehavior(
+    InstanceContextMode = InstanceContextMode.PerCall,
+    ConcurrencyMode = ConcurrencyMode.Multiple)]
+[AspNetCompatibilityRequirements(
+    RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+public class BasicHttpAuthService
+{
+    [OperationContract]
+    public string GrantPasswordAccessToken(string username, string password)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(username))
+                throw new InvalidOperationException("username não informado");
+
+            if (string.IsNullOrEmpty(password))
+                throw new InvalidOperationException("password não informado");
+
+            var ticket = new TokenAuthenticationProvider().GrantPasswordTicket(username, password);
+
+            return string.Format("Bearer {0}", ticket.AccessToken);
+        }
+        catch (AuthenticationException exception)
+        {
+            throw new WebFaultException<AuthTokenErrorResponse>(
+                    new AuthTokenErrorResponse("Problema ao realizar a autenticao", exception.Message),
+                    HttpStatusCode.Unauthorized);
+        }
+        catch (Exception exception)
+        {
+            OperationExceptionServiceFault fault = new OperationExceptionServiceFault(exception.Message);
+            throw new FaultException<OperationExceptionServiceFault>(fault, new FaultReason(exception.Message));
+        }
+        finally
+        {
+            HttpContext.Current.ClearError();
+        }
+
+    }
+
+    [OperationContract]
+    public void RevokeToken(string token)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(token))
+                throw new InvalidOperationException("token não informado");
+
+            new TokenAuthenticationProvider().RevokeAccessToken(token);
+        }
+        catch (Exception exception)
+        {
+            OperationExceptionServiceFault fault = new OperationExceptionServiceFault(exception.Message);
+            throw new FaultException<OperationExceptionServiceFault>(fault, new FaultReason(exception.Message));
+        }
+    }
+}
+
+[DataContract]
+public class AuthTokenErrorResponse
+{
+    public AuthTokenErrorResponse(string error, string errorDescription = "")
+    {
+        Error = error;
+        ErrorDescription = errorDescription;
+    }
+
+    [DataMember(Name = "error", Order = 0)]
+    public string Error { get; set; }
+
+    [DataMember(Name = "error_description", Order = 1)]
+    public string ErrorDescription { get; set; }
+}

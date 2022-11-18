@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<MenuPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>LISTA_DE_INSERCAO</Id>
+  <Level>Tecnologia</Level>
+  <MenuItems>
+    <MenuItemPortable>
+      <Id>PESSOA</Id>
+      <Order>10</Order>
+      <Type>Command</Type>
+      <Name>Pessoa</Name>
+      <CommandView>PESSOAS.FORM</CommandView>
+      <CommandName>New</CommandName>
+      <PageId />
+      <Active>true</Active>
+      <Level>Benner</Level>
+      <CssParaIcone>fa fa-user</CssParaIcone>
+    </MenuItemPortable>
+    <MenuItemPortable>
+      <Id>MARCA</Id>
+      <Order>20</Order>
+      <Type>Command</Type>
+      <Name>Marca</Name>
+      <CommandView>MARCAS.FORM</CommandView>
+      <CommandName>New</CommandName>
+      <PageId />
+      <Active>true</Active>
+      <Level>Benner</Level>
+      <CssParaIcone>fa fa-trademark</CssParaIcone>
+    </MenuItemPortable>
+  </MenuItems>
+</MenuPortable>

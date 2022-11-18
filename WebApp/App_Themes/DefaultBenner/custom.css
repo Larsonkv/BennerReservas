@@ -1,0 +1,107 @@
+﻿@import url("../../content/assets/css/themes/default.min.css");
+
+.page-header.navbar .page-logo .logo {
+    background-image: url(../../content/img/logo-benner-branca.png);
+}
+
+.menu-do-desenvolvedor {
+    background-color: #393939 !important;
+}
+
+.usuario {
+    background-color: #d64635 !important;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+}
+
+    .usuario:hover {
+        background-color: #d64635 !important;
+        color: #fff;
+    }
+/* === Pesquisa ===*/
+#searcher > a:hover {
+    background-color: #393939;
+}
+
+#searcher > a > i {
+    color: #999;
+    font-size: 17px;
+}
+
+#searcher:hover > a > i {
+    color: #bfbfbf;
+}
+/* === Pesquisa ===*/
+/* === Help F1 ===*/
+#helpDocumentation > a:hover {
+    background-color: #393939;
+}
+
+#helpDocumentation > a > i {
+    color: #999;
+    font-size: 17px;
+}
+
+#helpDocumentation:hover > a > i {
+    color: #bfbfbf;
+}
+/* === Help F1 ===*/
+/* === ChatBot ===*/
+#chat-bot > a > i {
+    color: #999;
+}
+/* === ChatBot ===*/
+
+/* === Importante ===*/
+/* === Todas as customizações aqui foram baseadas no tema default. ===*/
+/* === Nada aqui foi inventado! O que quero dizer é as customizações do metronic são complexas e se não utilizar o querySelector na integra do metronic  ===*/
+/* === conforme pode ser mapeado no developertools, pode ocorrer efeitos colaterais indesejaveis e imprevisiveis. ===*/
+/* === Meu conselho é: copie o querySelector inteiro e altere as propriedades css, mas não altere o querySelector.  ===*/
+/* === Seja cauteloso!  ===*/
+
+/* === Font Family Poppins ===*/
+body:not(.ace_editor) {
+    font-family: "Poppins", "Open Sans", sans-serif;
+}
+/* === Font Family Poppins ===*/
+/* === Cor de fundo do menu lateral no hover no mouse ===*/
+.page-sidebar .page-sidebar-menu .sub-menu > li.active > a, .page-sidebar .page-sidebar-menu .sub-menu > li.open > a, .page-sidebar .page-sidebar-menu .sub-menu > li:hover > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.active > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.open > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a {
+    background: #9e9e9e4f !important;
+}
+/* === Cor de fundo do menu lateral no hover no mouse ===*/
+/* === Cor da fonte do menu lateral ===*/
+.page-sidebar .page-sidebar-menu .sub-menu > li > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li > a {
+    color: #fff;
+}
+/* === Cor da fonte do menu lateral ===*/
+/* === Cor da fonte e fundo do primeiro nível do menu lateral ===*/
+.page-sidebar .page-sidebar-menu > li.open > a, .page-sidebar .page-sidebar-menu > li:hover > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.open > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li:hover > a {
+    background: #9e9e9e4f;
+    color: #fff;
+}
+.page-sidebar .page-sidebar-menu > li:hover {
+    background: #3e3e3e;
+}
+/* === Cor da fonte e fundo do primeiro nível do menu lateral ===*/
+/* === Cor da fonte do fonticon do menu lateral ===*/
+.page-sidebar .page-sidebar-menu .sub-menu > li.active > a > i, .page-sidebar .page-sidebar-menu .sub-menu > li.open > a > i, .page-sidebar .page-sidebar-menu .sub-menu > li:hover > a > i, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.active > a > i, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.open > a > i, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a > i {
+    color: #fff;
+}
+.page-sidebar .page-sidebar-menu .sub-menu > li > a > i, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li > a > i {
+    color: #fff;
+}
+/* === Cor da fonte do fonticon do menu lateral ===*/
+/* === Cor do fundo do menu de papéis ===*/
+.page-header.navbar .top-menu .navbar-nav > li.dropdown-extended .dropdown-menu .dropdown-menu-list > li > a:hover {
+    background: #9e9e9e4f;
+}
+.dropdown-menu > li.active:hover > a, .dropdown-menu > li.active > a, .dropdown-menu > li:hover > a {
+    background-color: #9e9e9e4f;
+}
+/* === Cor do fundo do menu de papéis ===*/
+/* === Cor do fundo do menu do desenvolvedor ===*/
+.page-header.navbar .hor-menu .navbar-nav > li .dropdown-menu li:hover > a {
+    background: #9e9e9e4f;
+}
+/* === Cor do fundo do menu do desenvolvedor ===*/

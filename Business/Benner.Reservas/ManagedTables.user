@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManagedTables xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Systems>
+    <item>
+      <key>
+        <string>RESERVAS@BNU-NT005153</string>
+      </key>
+      <value>
+        <SystemConfigurationToTables xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" z:Type="Benner.Tecnologia.CodeGenerator.VS2010AddIn.Controller.SystemConfigurationToTables" z:Assembly="Benner.Tecnologia.CodeGenerator.VS2010AddIn.Controller, Version=2008.0.0.0, Culture=neutral, PublicKeyToken=f2db26731026fd37" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.datacontract.org/2004/07/Benner.Tecnologia.CodeGenerator.VS2010AddIn.Controller">
+          <_tables z:Id="2">
+            <item>
+              <key>
+                <string xmlns="">Entidades</string>
+              </key>
+              <value>
+                <ArrayOfstring xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" z:Type="System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" z:Assembly="0" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                  <_items z:Id="2" z:Size="4">
+                    <string z:Id="3">PESSOAS</string>
+                    <string z:Id="4">PAISES</string>
+                    <string i:nil="true" />
+                    <string i:nil="true" />
+                  </_items>
+                  <_size>2</_size>
+                  <_version>2</_version>
+                </ArrayOfstring>
+              </value>
+            </item>
+          </_tables>
+          <_x003C_Name_x003E_k__BackingField z:Id="3">RESERVAS@BNU-NT005153</_x003C_Name_x003E_k__BackingField>
+        </SystemConfigurationToTables>
+      </value>
+    </item>
+  </Systems>
+</ManagedTables>

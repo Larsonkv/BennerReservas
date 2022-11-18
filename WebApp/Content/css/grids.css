@@ -1,0 +1,277 @@
+﻿/* ======== editable grid ========*/
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: middle;
+}
+
+div.table, .auto-numeric {
+    text-align: right;
+}
+
+.editable-grid-custom-column {
+    vertical-align: middle !important;
+}
+
+.normal-white-space {
+    white-space: normal !important;
+}
+
+.changed-record-column {
+    padding: 2px !important;
+}
+
+.changed-record {
+    float: left;
+    font-size: 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 2px;
+}
+
+.table.editable-grid .select2-bootstrap-append .btn {
+    margin-right: 0px;
+}
+
+/* ======== editable grid ========*/
+/*======== simple grid =========*/
+#chkFields {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.ui-sortable-helper {
+    box-shadow: 0px 0px 11px 2px rgba(204,204,204,1);
+    background-color: white;
+}
+
+.ui-sortable-handle {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(234,234,234,1);
+}
+
+    .ui-sortable-handle:last-child {
+        border-width: 0px;
+    }
+
+.space-command-record {
+    margin-right: 5px;
+}
+
+.table-scroll {
+    margin-bottom: 10px;
+}
+
+    .table-scroll > .table {
+        margin-bottom: 0px;
+    }
+
+.table a {
+    color: #000000;
+}
+
+.table tbody tr.active td {
+    color: #333;
+}
+
+.pagination > li > a {
+    color: #000000;
+}
+
+.table > thead > tr > th {
+    border-bottom: 0px;
+}
+
+.group-dropdown-menu .dropdown-menu.dropdown-menu-command-record > li > a.btn {
+    padding: 6px 13px 6px 13px;
+}
+
+.multi-select-column {
+    text-align: center;
+    width: 60px;
+}
+
+.column-action {
+    width: 50px;
+    white-space: nowrap;
+}
+
+.column-image {
+    width: 100px;
+}
+
+.column-numeric {
+    width: 150px;
+}
+
+.table.table-hover.simple-grid tr th.column-extra-options {
+    padding-right: 0px;
+    padding-left: 4px;
+    width: 20px;
+}
+
+.column-datatime {
+    width: 150px;
+}
+
+.totalizer-cell {
+    font-weight: bold;
+}
+
+.column-image-body {
+    padding: 0px;
+    margin-bottom: 0px !important;
+}
+
+.anchor:hover {
+    cursor: pointer;
+}
+
+.table.table-hover.simple-grid td {
+    cursor: pointer;
+}
+
+.table.table-hover.simple-grid .no-selected td {
+    cursor: default;
+}
+
+.table.table-hover.simple-grid a.no-hiperlink:focus, .table.table-hover.simple-grid a.no-hiperlink:hover {
+    cursor: default;
+    text-decoration: none;
+}
+
+.table.table-hover.simple-grid .selectable-row a.no-hiperlink:focus, .table.table-hover.simple-grid .selectable-row a.no-hiperlink:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.table-header {
+    white-space: nowrap;
+}
+
+    .table-header .title-header {
+        white-space: normal;
+        margin-right: 5px;
+        display: inline-block;
+    }
+
+    .table-header .title-icon-sort {
+        display: inline;
+        position: relative;
+    }
+
+.group-command-record {
+    margin-right: 5px;
+}
+
+.table tbody tr.active .btn-group.group-dropdown-menu button {
+    color: #fff;
+}
+
+.btn-group.drop-up > .dropdown-menu:before {
+    content: normal;
+}
+
+.btn-group.drop-up > .dropdown-menu:after {
+    content: normal;
+}
+
+a.nolink {
+    text-decoration: none;
+}
+
+.simple-grid .column-action .btn-group {
+    margin-right: 5px;
+}
+
+.simple-grid th:last-child {
+    position: relative;
+}
+
+.table.simple-grid .column-extra-options button {
+    margin-right: 0px;
+    padding: 0px 6px;
+}
+/*======== simple grid =========*/
+/* === filtro de grid === */
+.filter-search-form {
+    margin-bottom: 0px;
+    padding: 12px 14px;
+}
+
+.portlet-none .filter-search-form {
+    margin-bottom: 10px;
+}
+
+.form-inline .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+    .form-inline .form-group > select {
+        display: inline;
+        width: 200px;
+    }
+
+.filter-form > .form-body {
+    padding: 0px;
+}
+
+    .filter-form > .form-body > .form-group {
+        margin-bottom: 0px;
+    }
+
+        .filter-form > .form-body > .form-group:nth-of-type(n+2) {
+            margin-top: 10px;
+        }
+
+@media (max-width: 768px) {
+
+
+    .filter-search-form .col-xs-12 + .col-xs-12 {
+        padding-top: 5px;
+    }
+
+    .filter-actions {
+        margin-top: 10px;
+        text-align: right;
+    }
+
+    .widget .filter-actions a {
+        width: 50%;
+    }
+}
+
+@media (max-width: 992px) {
+    .single-condition {
+        padding-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .widget .filter-actions {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        padding-right: 15px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .no-padding-left {
+        padding-left: 0;
+    }
+}
+
+.padding-top-15 {
+    padding-top: 15px;
+}
+
+
+/* === filtro de grid === */
+/* === Coluna de seleção ===*/
+.simple-grid td .mt-checkbox span, .editable-grid td .mt-checkbox span {
+    margin-top: -5px;
+}
+/* === Coluna de seleção ===*/
