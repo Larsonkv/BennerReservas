@@ -31,7 +31,54 @@ namespace Benner.Reservas.Entidades
     {
         
         /// <summary>
-        /// Cpf (CPF.)
+        /// Ativo (ATIVO.)
+        /// Opcional = S, Invisível = False, Default = True
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        System.Nullable<bool> Ativo
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Benner.Tecnologia.Common.IEntityBase BairroInstance
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Handle BairroHandle
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// CEP (CEP.)
+        /// Opcional = S, Invisível = False, Tamanho = 9
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        string Cep
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// Complemento (COMPLEMENTO.)
+        /// Opcional = N, Invisível = False, Tamanho = 220
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        string Complemento
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// CPF (CPF.)
         /// Opcional = N, Invisível = False, Tamanho = 14
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
@@ -42,8 +89,105 @@ namespace Benner.Reservas.Entidades
         }
         
         /// <summary>
+        /// Data Alteração (DATAALTERACAO.)
+        /// Opcional = N, Invisível = True, Formato Data = Dia, Mês, Ano - Formato Hora = Hora, Minuto, Segundo
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        System.Nullable<System.DateTime> DataAlteracao
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// Data Criação (DATACRIACAO.)
+        /// Opcional = N, Invisível = True, Formato Data = Dia, Mês, Ano - Formato Hora = Hora, Minuto, Segundo
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        System.Nullable<System.DateTime> DataCriacao
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// Data nascimento (DATANASCIMENTO.)
+        /// Opcional = N, Invisível = False, Formato Data = Dia, Mês, Ano - Formato Hora = Sem hora
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        System.Nullable<System.DateTime> DataNascimento
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// E-mail (EMAIL.)
+        /// Opcional = S, Invisível = False, Tamanho = 190
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        string EMail
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Benner.Tecnologia.Common.IEntityBase EstadoInstance
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Handle EstadoHandle
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// Foto (FOTO.)
+        /// Opcional = S, Invisível = False
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        byte[] Foto
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Benner.Tecnologia.Common.IEntityBase LogradouroInstance
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Handle LogradouroHandle
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Benner.Tecnologia.Common.IEntityBase MunicipioInstance
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Handle MunicipioHandle
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
         /// Nome (NOME.)
-        /// Opcional = N, Invisível = False, Tamanho = 120
+        /// Opcional = N, Invisível = False, Tamanho = 190
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
         string Nome
@@ -52,8 +196,19 @@ namespace Benner.Reservas.Entidades
             set;
         }
         
+        /// <summary>
+        /// Número (NUMERO.)
+        /// Opcional = S, Invisível = False, Valor Mínimo = , Valor Máximo = , Tipo do Builder = Inteiro
+        /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        Benner.Tecnologia.Common.IEntityBase PaisInstance
+        System.Nullable<long> Numero
+        {
+            get;
+            set;
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        Benner.Reservas.Entidades.IPaises PaisInstance
         {
             get;
             set;
@@ -61,6 +216,28 @@ namespace Benner.Reservas.Entidades
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
         Handle PaisHandle
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// Telefone fixo (TELEFONEFIXO.)
+        /// Opcional = S, Invisível = False, Tamanho = 13
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        string TelefoneFixo
+        {
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// Telefone móvel (TELEFONEMOVEL.)
+        /// Opcional = S, Invisível = False, Tamanho = 14
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        string TelefoneMovel
         {
             get;
             set;
@@ -99,14 +276,148 @@ namespace Benner.Reservas.Entidades
         /// </summary>
 		public static class FieldNames
 		{
+			public const string Ativo = "ATIVO";
+			public const string Bairro = "BAIRRO";
+			public const string Cep = "CEP";
+			public const string Complemento = "COMPLEMENTO";
+			public const string Contato = "CONTATO";
 			public const string Cpf = "CPF";
+			public const string DataAlteracao = "DATAALTERACAO";
+			public const string DataCriacao = "DATACRIACAO";
+			public const string DataNascimento = "DATANASCIMENTO";
+			public const string EMail = "EMAIL";
+			public const string Endereco = "ENDERECO";
+			public const string Estado = "ESTADO";
+			public const string Foto = "FOTO";
+			public const string Logradouro = "LOGRADOURO";
+			public const string Municipio = "MUNICIPIO";
 			public const string Nome = "NOME";
+			public const string Numero = "NUMERO";
 			public const string Pais = "PAIS";
+			public const string TelefoneFixo = "TELEFONEFIXO";
+			public const string TelefoneMovel = "TELEFONEMOVEL";
 		}
 
         
         /// <summary>
-        /// Cpf (CPF.)
+        /// Ativo (ATIVO.)
+        /// Opcional = S, Invisível = False, Default = True
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public System.Nullable<bool> Ativo
+        {
+            get
+            {
+                return Fields["ATIVO"] as System.Nullable<System.Boolean>;
+            }
+            set
+            {
+                Fields["ATIVO"] = value;
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Tecnologia.Common.IEntityBase BairroInstance
+        {
+            get
+            {
+                if (Bairro.Handle == null)
+                {
+					return null;
+                }
+                return Bairro.Instance;
+            }
+            set
+            {
+                if (value == null)
+                {
+					Bairro = null;
+					return;
+                }
+                Bairro.Instance = (EntityBase) value;
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Handle BairroHandle
+        {
+            get
+            {
+                return Bairro.Handle;
+            }
+            set
+            {
+                Bairro.Handle = value;
+            }
+        }
+        
+        /// <summary>
+        /// Bairro (BAIRRO.)
+        /// Opcional = S, Invisível = False, Pesquisar = BAIRROS
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Tecnologia.Common.EntityAssociation Bairro
+        {
+            get
+            {
+                return Fields["BAIRRO"] as Benner.Tecnologia.Common.EntityAssociation;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    this.Bairro.Handle = null;
+                }
+                else
+                {
+                    if (value.IsLoaded)
+                    {
+                        this.Bairro.Instance = value.Instance;
+                    }
+                    else
+                    {
+                        this.Bairro.Handle = value.Handle;
+                    }
+                }
+            }
+        }
+        
+        /// <summary>
+        /// CEP (CEP.)
+        /// Opcional = S, Invisível = False, Tamanho = 9
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public string Cep
+        {
+            get
+            {
+                return Fields["CEP"] as System.String;
+            }
+            set
+            {
+                Fields["CEP"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// Complemento (COMPLEMENTO.)
+        /// Opcional = N, Invisível = False, Tamanho = 220
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public string Complemento
+        {
+            get
+            {
+                return Fields["COMPLEMENTO"] as System.String;
+            }
+            set
+            {
+                Fields["COMPLEMENTO"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// CPF (CPF.)
         /// Opcional = N, Invisível = False, Tamanho = 14
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
@@ -123,8 +434,291 @@ namespace Benner.Reservas.Entidades
         }
         
         /// <summary>
+        /// Data Alteração (DATAALTERACAO.)
+        /// Opcional = N, Invisível = True, Formato Data = Dia, Mês, Ano - Formato Hora = Hora, Minuto, Segundo
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public System.Nullable<System.DateTime> DataAlteracao
+        {
+            get
+            {
+                return Fields["DATAALTERACAO"] as System.Nullable<System.DateTime>;
+            }
+            set
+            {
+                Fields["DATAALTERACAO"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// Data Criação (DATACRIACAO.)
+        /// Opcional = N, Invisível = True, Formato Data = Dia, Mês, Ano - Formato Hora = Hora, Minuto, Segundo
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public System.Nullable<System.DateTime> DataCriacao
+        {
+            get
+            {
+                return Fields["DATACRIACAO"] as System.Nullable<System.DateTime>;
+            }
+            set
+            {
+                Fields["DATACRIACAO"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// Data nascimento (DATANASCIMENTO.)
+        /// Opcional = N, Invisível = False, Formato Data = Dia, Mês, Ano - Formato Hora = Sem hora
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public System.Nullable<System.DateTime> DataNascimento
+        {
+            get
+            {
+                return Fields["DATANASCIMENTO"] as System.Nullable<System.DateTime>;
+            }
+            set
+            {
+                Fields["DATANASCIMENTO"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// E-mail (EMAIL.)
+        /// Opcional = S, Invisível = False, Tamanho = 190
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public string EMail
+        {
+            get
+            {
+                return Fields["EMAIL"] as System.String;
+            }
+            set
+            {
+                Fields["EMAIL"] = value;
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Tecnologia.Common.IEntityBase EstadoInstance
+        {
+            get
+            {
+                if (Estado.Handle == null)
+                {
+					return null;
+                }
+                return Estado.Instance;
+            }
+            set
+            {
+                if (value == null)
+                {
+					Estado = null;
+					return;
+                }
+                Estado.Instance = (EntityBase) value;
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Handle EstadoHandle
+        {
+            get
+            {
+                return Estado.Handle;
+            }
+            set
+            {
+                Estado.Handle = value;
+            }
+        }
+        
+        /// <summary>
+        /// Estado (ESTADO.)
+        /// Opcional = S, Invisível = False, Pesquisar = ESTADOS
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Tecnologia.Common.EntityAssociation Estado
+        {
+            get
+            {
+                return Fields["ESTADO"] as Benner.Tecnologia.Common.EntityAssociation;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    this.Estado.Handle = null;
+                }
+                else
+                {
+                    if (value.IsLoaded)
+                    {
+                        this.Estado.Instance = value.Instance;
+                    }
+                    else
+                    {
+                        this.Estado.Handle = value.Handle;
+                    }
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Foto (FOTO.)
+        /// Opcional = S, Invisível = False
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public byte[] Foto
+        {
+            get
+            {
+                return Fields["FOTO"] as System.Byte[];
+            }
+            set
+            {
+                Fields["FOTO"] = value;
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Tecnologia.Common.IEntityBase LogradouroInstance
+        {
+            get
+            {
+                if (Logradouro.Handle == null)
+                {
+					return null;
+                }
+                return Logradouro.Instance;
+            }
+            set
+            {
+                if (value == null)
+                {
+					Logradouro = null;
+					return;
+                }
+                Logradouro.Instance = (EntityBase) value;
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Handle LogradouroHandle
+        {
+            get
+            {
+                return Logradouro.Handle;
+            }
+            set
+            {
+                Logradouro.Handle = value;
+            }
+        }
+        
+        /// <summary>
+        /// Logradouro (LOGRADOURO.)
+        /// Opcional = S, Invisível = False, Pesquisar = LOGRADOUROS
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Tecnologia.Common.EntityAssociation Logradouro
+        {
+            get
+            {
+                return Fields["LOGRADOURO"] as Benner.Tecnologia.Common.EntityAssociation;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    this.Logradouro.Handle = null;
+                }
+                else
+                {
+                    if (value.IsLoaded)
+                    {
+                        this.Logradouro.Instance = value.Instance;
+                    }
+                    else
+                    {
+                        this.Logradouro.Handle = value.Handle;
+                    }
+                }
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Tecnologia.Common.IEntityBase MunicipioInstance
+        {
+            get
+            {
+                if (Municipio.Handle == null)
+                {
+					return null;
+                }
+                return Municipio.Instance;
+            }
+            set
+            {
+                if (value == null)
+                {
+					Municipio = null;
+					return;
+                }
+                Municipio.Instance = (EntityBase) value;
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Handle MunicipioHandle
+        {
+            get
+            {
+                return Municipio.Handle;
+            }
+            set
+            {
+                Municipio.Handle = value;
+            }
+        }
+        
+        /// <summary>
+        /// Município (MUNICIPIO.)
+        /// Opcional = S, Invisível = False, Pesquisar = MUNICIPIOS
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Tecnologia.Common.EntityAssociation Municipio
+        {
+            get
+            {
+                return Fields["MUNICIPIO"] as Benner.Tecnologia.Common.EntityAssociation;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    this.Municipio.Handle = null;
+                }
+                else
+                {
+                    if (value.IsLoaded)
+                    {
+                        this.Municipio.Instance = value.Instance;
+                    }
+                    else
+                    {
+                        this.Municipio.Handle = value.Handle;
+                    }
+                }
+            }
+        }
+        
+        /// <summary>
         /// Nome (NOME.)
-        /// Opcional = N, Invisível = False, Tamanho = 120
+        /// Opcional = N, Invisível = False, Tamanho = 190
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
         public string Nome
@@ -139,8 +733,25 @@ namespace Benner.Reservas.Entidades
             }
         }
         
+        /// <summary>
+        /// Número (NUMERO.)
+        /// Opcional = S, Invisível = False, Valor Mínimo = , Valor Máximo = , Tipo do Builder = Inteiro
+        /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        public Benner.Tecnologia.Common.IEntityBase PaisInstance
+        public System.Nullable<long> Numero
+        {
+            get
+            {
+                return Fields["NUMERO"] as System.Nullable<System.Int64>;
+            }
+            set
+            {
+                Fields["NUMERO"] = value;
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public Benner.Reservas.Entidades.IPaises PaisInstance
         {
             get
             {
@@ -157,7 +768,7 @@ namespace Benner.Reservas.Entidades
 					Pais = null;
 					return;
                 }
-                Pais.Instance = (EntityBase) value;
+                Pais.Instance = (Benner.Reservas.Entidades.Paises) value;
             }
         }
         
@@ -176,14 +787,14 @@ namespace Benner.Reservas.Entidades
         
         /// <summary>
         /// País (PAIS.)
-        /// Opcional = N, Invisível = False, Pesquisar = PAISES
+        /// Opcional = S, Invisível = False, Pesquisar = PAISES
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        public Benner.Tecnologia.Common.EntityAssociation Pais
+        public Benner.Tecnologia.Common.EntityAssociation<Benner.Reservas.Entidades.Paises> Pais
         {
             get
             {
-                return Fields["PAIS"] as Benner.Tecnologia.Common.EntityAssociation;
+                return (Fields["PAIS"] as EntityAssociation).Wrap<Benner.Reservas.Entidades.Paises>(Benner.Reservas.Entidades.Paises.Get);
             }
             set
             {
@@ -193,7 +804,7 @@ namespace Benner.Reservas.Entidades
                 }
                 else
                 {
-                    if (value.IsLoaded)
+                    if (value.Association.IsLoaded)
                     {
                         this.Pais.Instance = value.Instance;
                     }
@@ -202,6 +813,40 @@ namespace Benner.Reservas.Entidades
                         this.Pais.Handle = value.Handle;
                     }
                 }
+            }
+        }
+        
+        /// <summary>
+        /// Telefone fixo (TELEFONEFIXO.)
+        /// Opcional = S, Invisível = False, Tamanho = 13
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public string TelefoneFixo
+        {
+            get
+            {
+                return Fields["TELEFONEFIXO"] as System.String;
+            }
+            set
+            {
+                Fields["TELEFONEFIXO"] = value;
+            }
+        }
+        
+        /// <summary>
+        /// Telefone móvel (TELEFONEMOVEL.)
+        /// Opcional = S, Invisível = False, Tamanho = 14
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
+        public string TelefoneMovel
+        {
+            get
+            {
+                return Fields["TELEFONEMOVEL"] as System.String;
+            }
+            set
+            {
+                Fields["TELEFONEMOVEL"] = value;
             }
         }
     }

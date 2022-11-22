@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<FilterPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ViewName>MODELOSCARROS.GRID</ViewName>
+  <Level>Benner</Level>
+  <EntityName>MODELOSCARROS</EntityName>
+  <Filters>
+    <FilterItemPortable>
+      <Name>Mais completos</Name>
+      <Type>Conditions</Type>
+      <ShowEmptyResults>false</ShowEmptyResults>
+      <ShowSimpleSearch>true</ShowSimpleSearch>
+      <AdvancedFilterConditions>1 E 2</AdvancedFilterConditions>
+      <ConditionsContent><![CDATA[<ArrayOfFilterCondition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FilterCondition Index="1" FieldName="CODIGO">
+    <TableName>MODELOSCARROS</TableName>
+    <FieldDefinitionName>StringFieldDefinition</FieldDefinitionName>
+    <Operator>
+      <Name>contém</Name>
+      <DatabaseOperator>LIKE</DatabaseOperator>
+      <IsFunction>false</IsFunction>
+      <ValueSubstitutionPattern>%{0}%</ValueSubstitutionPattern>
+    </Operator>
+    <Value xsi:type="xsd:string">HL</Value>
+    <Label />
+    <UserInputRequired>false</UserInputRequired>
+    <Required>false</Required>
+    <IsManuallyDefined>false</IsManuallyDefined>
+  </FilterCondition>
+  <FilterCondition Index="2" FieldName="OPCIONAIS">
+    <TableName>MODELOSCARROS</TableName>
+    <FieldDefinitionName>BitFieldDefinition</FieldDefinitionName>
+    <Operator>
+      <Name>igual</Name>
+      <DatabaseOperator>=</DatabaseOperator>
+      <IsFunction>false</IsFunction>
+    </Operator>
+    <Value xsi:type="ArrayOfListItem">
+      <ListItem>
+        <Value>1</Value>
+        <Text>Ar Condicionado</Text>
+      </ListItem>
+      <ListItem>
+        <Value>2</Value>
+        <Text>Direção hidráulica</Text>
+      </ListItem>
+      <ListItem>
+        <Value>4</Value>
+        <Text>Central multimídia</Text>
+      </ListItem>
+    </Value>
+    <Label />
+    <UserInputRequired>false</UserInputRequired>
+    <Required>false</Required>
+    <IsManuallyDefined>false</IsManuallyDefined>
+  </FilterCondition>
+</ArrayOfFilterCondition>
+]]></ConditionsContent>
+      <WhereClauseContent><![CDATA[<WhereClause xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Where>A.CODIGO LIKE :1__CODIGO AND @BITLIGADO(A.OPCIONAIS, 7)</Where>
+  <Parameters>
+    <Parameter>
+      <Name>1__CODIGO</Name>
+      <Value xsi:type="xsd:string">%HL%</Value>
+      <Direction>Input</Direction>
+      <DataType>String</DataType>
+      <Precision>0</Precision>
+      <Scale>0</Scale>
+      <Size>0</Size>
+    </Parameter>
+  </Parameters>
+</WhereClause>
+]]></WhereClauseContent>
+      <Visible>true</Visible>
+    </FilterItemPortable>
+  </Filters>
+</FilterPortable>

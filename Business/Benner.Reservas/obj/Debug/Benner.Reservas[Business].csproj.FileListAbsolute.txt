@@ -1,6 +1,5 @@
 C:\Benner\Fontes\Reservas\WebApp\Provider\Bin\Benner.Reservas.dll
 C:\Benner\Fontes\Reservas\WebApp\Provider\Bin\Benner.Reservas.pdb
-C:\Benner\Fontes\Reservas\Business\Benner.Reservas\obj\Debug\Benner.Reservas[Business].csprojAssemblyReference.cache
 C:\Benner\Fontes\Reservas\Business\Benner.Reservas\obj\Debug\Benner.Reservas[Business].csproj.CoreCompileInputs.cache
 C:\Benner\Fontes\Reservas\Business\Benner.Reservas\obj\Debug\Benner.Reservas.dll
 C:\Benner\Fontes\Reservas\Business\Benner.Reservas\obj\Debug\Benner.Reservas.pdb
@@ -10,3 +9,4 @@ C:\Benner\Fontes\Reservas\WebApp\Provider\Bin\snappy64.dll
 C:\Benner\Fontes\Reservas\WebApp\Provider\Bin\libzstd.dll
 C:\Benner\Fontes\Reservas\WebApp\Provider\Bin\Benner.Reservas.dll.config
 C:\Benner\Fontes\Reservas\Business\Benner.Reservas\obj\Debug\Benner.Reservas[Business].csproj.CopyComplete
+C:\Benner\Fontes\Reservas\Business\Benner.Reservas\obj\Debug\Benner.Reservas[Business].csprojAssemblyReference.cache

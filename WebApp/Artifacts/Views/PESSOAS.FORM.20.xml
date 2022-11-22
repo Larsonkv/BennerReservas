@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<ViewPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>PESSOAS.FORM</Name>
+  <Level>Benner</Level>
+  <EntityName>PESSOAS</EntityName>
+  <Type>Formulário</Type>
+  <Version>14</Version>
+  <FormDefinition entityDefinitionName="PESSOAS" name="PESSOAS.FORM" title="PESSOAS" inherited="true">
+    <IsContextCached>false</IsContextCached>
+    <Fields />
+    <RecordReadOnly>false</RecordReadOnly>
+    <TableReadOnly>false</TableReadOnly>
+    <Pages>
+      <FormPage key="GERAL" inherited="true">
+        <visible xsi:nil="true" />
+        <Items>
+          <FormPageItem xsi:type="FormPageField" key="NOME" inherited="true">
+            <layout xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="CPF" inherited="true">
+            <layout xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageImageField" key="FOTO" inherited="true">
+            <layout xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+            <thumbNailSize xsi:nil="true" />
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="DATANASCIMENTO">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col2</bootstrapCols>
+          </FormPageItem>
+        </Items>
+      </FormPage>
+      <FormPage key="CONTATOS" inherited="true">
+        <visible xsi:nil="true" />
+        <Items>
+          <FormPageItem xsi:type="FormPageGroup" key="CONTATO" inherited="true">
+            <visible xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+            <stateGroup xsi:nil="true" />
+            <Items>
+              <FormPageItem xsi:type="FormPageField" key="EMAIL" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="TELEFONEFIXO" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="TELEFONEMOVEL" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+            </Items>
+          </FormPageItem>
+        </Items>
+      </FormPage>
+      <FormPage key="ENDERECO" inherited="true">
+        <visible xsi:nil="true" />
+        <Items>
+          <FormPageItem xsi:type="FormPageGroup" key="ENDERECO" inherited="true">
+            <visible xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+            <stateGroup xsi:nil="true" />
+            <Items>
+              <FormPageItem xsi:type="FormPageField" key="PAIS" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="ESTADO" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="MUNICIPIO" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="BAIRRO" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="LOGRADOURO" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="CEP" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="NUMERO" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+              <FormPageItem xsi:type="FormPageField" key="COMPLEMENTO" inherited="true">
+                <layout xsi:nil="true" />
+                <bootstrapCols xsi:nil="true" />
+              </FormPageItem>
+            </Items>
+          </FormPageItem>
+        </Items>
+      </FormPage>
+    </Pages>
+    <Column>4</Column>
+    <FormCaptionPosition>Left</FormCaptionPosition>
+    <SubstituteViewName xsi:nil="true" />
+    <FieldDefinitions>
+      <FormFieldDefinition xsi:type="FormFieldStringDefinition" key="NOME" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <lines xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldStringDefinition" key="CPF" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <lines xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="FOTO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldStringDefinition" key="EMAIL" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <lines xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldStringDefinition" key="TELEFONEFIXO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <lines xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldStringDefinition" key="TELEFONEMOVEL" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <lines xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" key="PAIS" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode xsi:nil="true" />
+        <SelectAnyStructuredLevel xsi:nil="true" />
+        <SearchOnEnter xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" key="ESTADO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode xsi:nil="true" />
+        <SelectAnyStructuredLevel xsi:nil="true" />
+        <SearchOnEnter xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" key="MUNICIPIO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode xsi:nil="true" />
+        <SelectAnyStructuredLevel xsi:nil="true" />
+        <SearchOnEnter xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" key="BAIRRO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode xsi:nil="true" />
+        <SelectAnyStructuredLevel xsi:nil="true" />
+        <SearchOnEnter xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" key="LOGRADOURO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode xsi:nil="true" />
+        <SelectAnyStructuredLevel xsi:nil="true" />
+        <SearchOnEnter xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldStringDefinition" key="CEP" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <lines xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="NUMERO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldStringDefinition" key="COMPLEMENTO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <lines xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="DATANASCIMENTO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle>true</renderTitle>
+      </FormFieldDefinition>
+      <FormFieldDefinition key="DATACRIACAO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="DATAALTERACAO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="ATIVO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="CONTATO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="ENDERECO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+    </FieldDefinitions>
+    <Commands>
+      <Command title="" key="Previous" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context xsi:nil="true" />
+      </Command>
+      <Command title="" key="Next" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context xsi:nil="true" />
+      </Command>
+      <Command title="" key="New" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context xsi:nil="true" />
+      </Command>
+      <Command title="" key="Edit" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context xsi:nil="true" />
+      </Command>
+      <Command title="" key="Delete" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context xsi:nil="true" />
+      </Command>
+      <Command title="" key="Save" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context xsi:nil="true" />
+      </Command>
+      <Command title="" key="SaveNew" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context xsi:nil="true" />
+      </Command>
+      <Command title="" key="Cancel" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context xsi:nil="true" />
+      </Command>
+    </Commands>
+  </FormDefinition>
+</ViewPortable>

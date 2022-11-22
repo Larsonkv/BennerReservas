@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TaskPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>GERENCIARPLANOS</Id>
+  <Title>Gerenciar Planos</Title>
+  <Level>Benner</Level>
+  <Reports />
+  <Pages>
+    <string>PAGES_PLANOS_FORM</string>
+    <string>PAGES_PLANOS_GRID</string>
+  </Pages>
+  <Components />
+  <Operations>
+    <string>PLANOS|DELETE</string>
+    <string>PLANOS|INSERT</string>
+    <string>PLANOS|UPDATE</string>
+    <string>PLANOS|VIEW</string>
+  </Operations>
+  <Process />
+  <Tasks />
+  <FieldVisibility />
+</TaskPortable>

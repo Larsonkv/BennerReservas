@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<RolePortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>ATENDENTE</Id>
+  <Title>Atendente</Title>
+  <Level>Benner</Level>
+  <Tasks>
+    <string>ACESSARCHATBOT</string>
+    <string>ATENDERRESERVAS</string>
+    <string>GERENCIARAGENDAMENTOS</string>
+  </Tasks>
+  <Roles />
+</RolePortable>

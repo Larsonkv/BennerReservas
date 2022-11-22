@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<RolePortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>CADASTRADOR</Id>
+  <Title>Cadastrador</Title>
+  <Description>Localização e Carros</Description>
+  <Level>Benner</Level>
+  <Tasks>
+    <string>CADASTRARCARROS</string>
+    <string>CADASTRARLOCALIZACAO</string>
+  </Tasks>
+  <Roles />
+</RolePortable>

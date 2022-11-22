@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ScriptPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ViewName>CARROS.GRID</ViewName>
+  <EntityName>CARROS</EntityName>
+  <Level>Benner</Level>
+  <Scripts>
+    <ScriptItemPortable>
+      <FunctionName>InitializeRow</FunctionName>
+      <LanguageName>IronPython</LanguageName>
+      <SourceCode>def InitializeRow(entity, row):
+    if (entity == None or row == None): return
+    ativo = entity["ATIVO"].GetBoolean()
+    if (ativo == None): ativo = False
+    row.GetCustomCommand("CMD_Ativar").Enabled = not ativo
+    row.GetCustomCommand("CMD_Desativar").Enabled = ativo
+    row.GetCellByName("ATIVO").Text = ""
+    row.GetCellByName("ATIVO").TextColor = "#00ff00" if (ativo) else "#ff0000"
+    row.GetCellByName("ATIVO").FontIcon = "fa fa-lock" if (ativo) else "fa fa-unlock"
+</SourceCode>
+    </ScriptItemPortable>
+    <ScriptItemPortable>
+      <FunctionName>OnCMD_DesativarExecute</FunctionName>
+      <LanguageName>IronPython</LanguageName>
+      <SourceCode>def OnCMD_DesativarExecute(command, entity):
+    command.RequestConfirmationBeforeExecute("Deseja realmente desativar esse carro?")
+</SourceCode>
+    </ScriptItemPortable>
+    <ScriptItemPortable>
+      <FunctionName>OnCMD_AtivarExecute</FunctionName>
+      <LanguageName>IronPython</LanguageName>
+      <SourceCode>def OnCMD_AtivarExecute(command, entity):
+     command.RequestConfirmationBeforeExecute("Deseja realmente ativar esse carro?")
+</SourceCode>
+    </ScriptItemPortable>
+  </Scripts>
+</ScriptPortable>

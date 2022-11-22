@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<RolePortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>GERENTE</Id>
+  <Title>Gerente</Title>
+  <Level>Benner</Level>
+  <Tasks>
+    <string>ATENDERRESERVAS</string>
+    <string>GERENCIARPLANOS</string>
+  </Tasks>
+  <Roles />
+</RolePortable>

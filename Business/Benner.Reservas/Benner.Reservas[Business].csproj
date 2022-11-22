@@ -281,7 +281,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Carros.cs" />
+    <Compile Include="Entidades\Carros.Dao.cs" />
+    <Compile Include="Entidades\Carros.properties.cs">
+      <DependentUpon>Carros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Carros.userinterface.cs">
+      <DependentUpon>Carros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\DocumentosFinanceiros.cs" />
+    <Compile Include="Entidades\DocumentosFinanceiros.properties.cs">
+      <DependentUpon>DocumentosFinanceiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\DocumentosFinanceiros.userinterface.cs">
+      <DependentUpon>DocumentosFinanceiros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Paises.cs" />
+    <Compile Include="Entidades\Paises.Dao.cs" />
     <Compile Include="Entidades\Paises.properties.cs">
       <DependentUpon>Paises.cs</DependentUpon>
     </Compile>
@@ -295,6 +311,29 @@
     <Compile Include="Entidades\Pessoas.userinterface.cs">
       <DependentUpon>Pessoas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\Planos.cs" />
+    <Compile Include="Entidades\Planos.properties.cs">
+      <DependentUpon>Planos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Planos.userinterface.cs">
+      <DependentUpon>Planos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ReservaDocumentos.cs" />
+    <Compile Include="Entidades\ReservaDocumentos.properties.cs">
+      <DependentUpon>ReservaDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ReservaDocumentos.userinterface.cs">
+      <DependentUpon>ReservaDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Reservas.cs" />
+    <Compile Include="Entidades\Reservas.Dao.cs" />
+    <Compile Include="Entidades\Reservas.properties.cs">
+      <DependentUpon>Reservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Reservas.userinterface.cs">
+      <DependentUpon>Reservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IGerenciadorReservas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -312,12 +351,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(TargetPath) C:\Benner\Fontes\Reservas\WebApp\Bin /Y /R</PostBuildEvent>
+    <PostBuildEvent>xcopy $(TargetPath) C:\Benner\Fontes\Reservas\WebApp\Bin /Y /R
+xcopy $(TargetPath) C:\temp\BEF\Reservas /Y /R</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\..\packages\MongoDB.Driver.Core.signed.2.11.2\build\MongoDB.Driver.Core.signed.targets" Condition="Exists('..\..\packages\MongoDB.Driver.Core.signed.2.11.2\build\MongoDB.Driver.Core.signed.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

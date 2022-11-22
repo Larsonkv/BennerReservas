@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TaskPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>ATENDERRESERVAS</Id>
+  <Title>Atender Reservas</Title>
+  <Level>Benner</Level>
+  <Reports />
+  <Pages>
+    <string>PAGES_RESERVAS_FORM</string>
+    <string>PAGES_RESERVAS_GRID</string>
+  </Pages>
+  <Components />
+  <Operations>
+    <string>RESERVAS|DELETE</string>
+    <string>RESERVAS|INSERT</string>
+    <string>RESERVAS|UPDATE</string>
+    <string>RESERVAS|VIEW</string>
+  </Operations>
+  <Process />
+  <Tasks />
+  <FieldVisibility />
+</TaskPortable>

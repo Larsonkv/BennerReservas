@@ -4,6 +4,15 @@
   <Level>Tecnologia</Level>
   <MenuItems>
     <MenuItemPortable>
+      <Id>RESERVAS</Id>
+      <Order>2</Order>
+      <Type>Page</Type>
+      <Name>Reservas</Name>
+      <PageId>PAGES_RESERVAS_GRID</PageId>
+      <Active>true</Active>
+      <Level>Benner</Level>
+    </MenuItemPortable>
+    <MenuItemPortable>
       <Id>PLANOS</Id>
       <Order>6</Order>
       <Type>Page</Type>

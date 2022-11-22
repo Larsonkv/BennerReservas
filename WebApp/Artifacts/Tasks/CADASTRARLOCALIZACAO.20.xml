@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TaskPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>CADASTRARLOCALIZACAO</Id>
+  <Title>CadastrarLocalizacao</Title>
+  <Level>Benner</Level>
+  <Reports />
+  <Pages>
+    <string>PAGE_LOGRADOUROS_GRID</string>
+    <string>PAGES_BAIRROS_FORM</string>
+    <string>PAGES_BAIRROS_GRID</string>
+    <string>PAGES_ESTADOS_FORM</string>
+    <string>PAGES_ESTADOS_GRID</string>
+    <string>PAGES_LOCALIZACAO_MENU</string>
+    <string>PAGES_LOGRADOUROS_FORM</string>
+    <string>PAGES_MUNICIPIOS_FORM</string>
+    <string>PAGES_MUNICIPIOS_GRID</string>
+    <string>PAGES_PAISES_FORM</string>
+    <string>PAGES_PAISES_GRID</string>
+  </Pages>
+  <Components />
+  <Operations>
+    <string>BAIRROS|DELETE</string>
+    <string>BAIRROS|INSERT</string>
+    <string>BAIRROS|UPDATE</string>
+    <string>BAIRROS|VIEW</string>
+    <string>ESTADOS|DELETE</string>
+    <string>ESTADOS|INSERT</string>
+    <string>ESTADOS|UPDATE</string>
+    <string>ESTADOS|VIEW</string>
+    <string>LOGRADOUROS|DELETE</string>
+    <string>LOGRADOUROS|INSERT</string>
+    <string>LOGRADOUROS|UPDATE</string>
+    <string>LOGRADOUROS|VIEW</string>
+    <string>MUNICIPIOS|DELETE</string>
+    <string>MUNICIPIOS|INSERT</string>
+    <string>MUNICIPIOS|UPDATE</string>
+    <string>MUNICIPIOS|VIEW</string>
+    <string>PAISES|DELETE</string>
+    <string>PAISES|INSERT</string>
+    <string>PAISES|UPDATE</string>
+    <string>PAISES|VIEW</string>
+  </Operations>
+  <Process />
+  <Tasks />
+  <FieldVisibility />
+</TaskPortable>

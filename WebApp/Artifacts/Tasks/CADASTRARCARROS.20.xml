@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TaskPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>CADASTRARCARROS</Id>
+  <Title>CadastrarCarros</Title>
+  <Level>Benner</Level>
+  <Reports />
+  <Pages>
+    <string>PAGES_CARROS_FORM</string>
+    <string>PAGES_CARROS_GRID</string>
+  </Pages>
+  <Components />
+  <Operations>
+    <string>CARROS|DELETE</string>
+    <string>CARROS|INSERT</string>
+    <string>CARROS|UPDATE</string>
+    <string>CARROS|VIEW</string>
+  </Operations>
+  <Process />
+  <Tasks />
+  <FieldVisibility />
+</TaskPortable>

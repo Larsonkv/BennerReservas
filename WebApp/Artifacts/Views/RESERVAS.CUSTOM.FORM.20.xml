@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<ViewPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>RESERVAS.CUSTOM.FORM</Name>
+  <Level>Benner</Level>
+  <EntityName>RESERVAS</EntityName>
+  <Type>Formulário</Type>
+  <Version>14</Version>
+  <FormDefinition entityDefinitionName="RESERVAS" name="RESERVAS.CUSTOM.FORM" title="" inherited="false">
+    <IsContextCached>false</IsContextCached>
+    <Fields />
+    <RecordReadOnly>false</RecordReadOnly>
+    <TableReadOnly>false</TableReadOnly>
+    <Pages>
+      <FormPage caption="Geral" key="GERAL">
+        <visible>true</visible>
+        <Items>
+          <FormPageItem xsi:type="FormPageField" key="PESSOA">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col6</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="PLANO">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col6</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="QUILOMETRAGEM">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col2</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="MODELOCARRO">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col6</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="CARRO">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col6</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="DATAINICIO">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col4</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="DATAFIM">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col4</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="STATUS">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col3</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="DATASOLICITACAO">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col4</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="OBSERVACOES">
+            <layout>TwoColumn</layout>
+            <bootstrapCols>Col12</bootstrapCols>
+          </FormPageItem>
+        </Items>
+      </FormPage>
+    </Pages>
+    <Column xsi:nil="true" />
+    <FormCaptionPosition>Top</FormCaptionPosition>
+    <SubstituteViewName xsi:nil="true" />
+    <FieldDefinitions>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" title="Pessoa" key="PESSOA">
+        <visible>true</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>true</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode>CompanyAndBranch</CompanyFilterMode>
+        <SelectAnyStructuredLevel>false</SelectAnyStructuredLevel>
+        <SearchOnEnter>false</SearchOnEnter>
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" title="Plano" key="PLANO">
+        <visible>true</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>true</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode>CompanyAndBranch</CompanyFilterMode>
+        <SelectAnyStructuredLevel>false</SelectAnyStructuredLevel>
+        <SearchOnEnter>false</SearchOnEnter>
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" title="Modelo carro" key="MODELOCARRO">
+        <visible>true</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>true</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode>CompanyAndBranch</CompanyFilterMode>
+        <SelectAnyStructuredLevel>false</SelectAnyStructuredLevel>
+        <SearchOnEnter>false</SearchOnEnter>
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" title="Carro" key="CARRO">
+        <visible>false</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>false</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode>CompanyAndBranch</CompanyFilterMode>
+        <SelectAnyStructuredLevel>false</SelectAnyStructuredLevel>
+        <SearchOnEnter>false</SearchOnEnter>
+      </FormFieldDefinition>
+      <FormFieldDefinition title="Data início" key="DATAINICIO">
+        <visible>true</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>true</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition title="Data fim" key="DATAFIM">
+        <visible>true</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>false</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition title="Status" key="STATUS">
+        <visible>true</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>true</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="QUILOMETRAGEM">
+        <visible>false</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle>true</renderTitle>
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldStringDefinition" title="Observações" key="OBSERVACOES">
+        <visible>true</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>false</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <lines>4</lines>
+      </FormFieldDefinition>
+      <FormFieldDefinition title="Data de Solicitação" key="DATASOLICITACAO">
+        <visible>true</visible>
+        <DataAccessLevel>Edit</DataAccessLevel>
+        <Required>false</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle>true</renderTitle>
+      </FormFieldDefinition>
+    </FieldDefinitions>
+    <Commands>
+      <Command title="" key="Previous">
+        <visible>true</visible>
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context>Record</context>
+        <ProcessDefinition xsi:type="PredefinedAction" type="Previous" />
+      </Command>
+      <Command title="" key="Next">
+        <visible>true</visible>
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context>Record</context>
+        <ProcessDefinition xsi:type="PredefinedAction" type="Next" />
+      </Command>
+      <Command title="Novo" key="New">
+        <visible>true</visible>
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context>Table</context>
+        <ProcessDefinition xsi:type="PredefinedAction" type="New" />
+      </Command>
+      <Command title="Editar" key="Edit">
+        <visible>true</visible>
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context>Record</context>
+        <ProcessDefinition xsi:type="PredefinedAction" type="Edit" />
+      </Command>
+      <Command title="Excluir" key="Delete">
+        <visible>true</visible>
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context>Record</context>
+        <ProcessDefinition xsi:type="PredefinedAction" type="Delete" />
+      </Command>
+      <Command title="Salvar" key="Save">
+        <visible>true</visible>
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context>Record</context>
+        <ProcessDefinition xsi:type="PredefinedAction" type="Save" />
+      </Command>
+      <Command title="Salvar/Novo" key="SaveNew">
+        <visible>true</visible>
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context>Record</context>
+        <ProcessDefinition xsi:type="PredefinedAction" type="SaveNew" />
+      </Command>
+      <Command title="Cancelar" key="Cancel">
+        <visible>true</visible>
+        <showModal xsi:nil="true" />
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable xsi:nil="true" />
+        <runInEditMode xsi:nil="true" />
+        <context>Record</context>
+        <ProcessDefinition xsi:type="PredefinedAction" type="Cancel" />
+      </Command>
+    </Commands>
+  </FormDefinition>
+</ViewPortable>

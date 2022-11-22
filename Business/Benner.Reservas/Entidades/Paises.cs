@@ -20,5 +20,6 @@ namespace Benner.Reservas.Entidades
     /// </summary>
     public partial class Paises
     {
+
     }
 }
