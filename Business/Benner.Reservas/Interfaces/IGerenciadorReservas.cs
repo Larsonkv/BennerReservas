@@ -11,5 +11,8 @@ namespace Benner.Reservas.Interfaces
     {
         string AprovarReserva(IReservas reserva);
 
+        string DevolverReserva(IReservas reserva);
+
+        string RecusarReserva(IReservas reserva);
     }
 }

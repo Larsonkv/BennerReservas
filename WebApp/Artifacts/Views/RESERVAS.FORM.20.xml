@@ -54,6 +54,14 @@
             <layout xsi:nil="true" />
             <bootstrapCols xsi:nil="true" />
           </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="CONTATO">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col6</bootstrapCols>
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="CIDADE">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col6</bootstrapCols>
+          </FormPageItem>
         </Items>
       </FormPage>
     </Pages>
@@ -143,6 +151,24 @@
         <Required xsi:nil="true" />
         <HasScriptEvent xsi:nil="true" />
         <renderTitle>true</renderTitle>
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldPathDefinition" title="Contato" key="CONTATO">
+        <visible>true</visible>
+        <DataAccessLevel>Read</DataAccessLevel>
+        <Required>false</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle>true</renderTitle>
+        <SystemInstanceName>RESERVAS</SystemInstanceName>
+        <Path>PESSOA&gt;PESSOAS.TELEFONEMOVEL</Path>
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldPathDefinition" title="Cidade" key="CIDADE">
+        <visible>true</visible>
+        <DataAccessLevel>Read</DataAccessLevel>
+        <Required>false</Required>
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle>true</renderTitle>
+        <SystemInstanceName>RESERVAS</SystemInstanceName>
+        <Path>PESSOA&gt;PESSOAS.MUNICIPIO&gt;MUNICIPIOS.NOME</Path>
       </FormFieldDefinition>
     </FieldDefinitions>
     <Commands>

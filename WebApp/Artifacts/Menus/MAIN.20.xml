@@ -4,6 +4,17 @@
   <Level>Tecnologia</Level>
   <MenuItems>
     <MenuItemPortable>
+      <Id>PAGES_CARROS_CONSULTADISPONIVEIS</Id>
+      <ParentId>CARROS</ParentId>
+      <Order>0</Order>
+      <Type>Page</Type>
+      <Name>Consulta Disponiveis</Name>
+      <PageId>PAGES_CARROS_CONSULTADISPONIVEIS</PageId>
+      <Active>true</Active>
+      <Level>Benner</Level>
+      <CssParaIcone>fa fa-search</CssParaIcone>
+    </MenuItemPortable>
+    <MenuItemPortable>
       <Id>RESERVAS</Id>
       <Order>2</Order>
       <Type>Page</Type>

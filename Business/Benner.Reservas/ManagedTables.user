@@ -22,10 +22,27 @@
                     <string z:Id="7">DOCUMENTOSFINANCEIROS</string>
                     <string z:Id="8">RESERVADOCUMENTOS</string>
                     <string z:Id="9">CARROS</string>
+                    <string z:Id="10">MODELOSCARROS</string>
+                  </_items>
+                  <_size>8</_size>
+                  <_version>8</_version>
+                </ArrayOfstring>
+              </value>
+            </item>
+            <item>
+              <key>
+                <string xmlns="">Entradas</string>
+              </key>
+              <value>
+                <ArrayOfstring xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" z:Type="System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" z:Assembly="0" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                  <_items z:Id="2" z:Size="4">
+                    <string z:Id="3">VT_WIZARD_PESSOA</string>
+                    <string z:Id="4">VT_WIZARD_RESERVA</string>
+                    <string i:nil="true" />
                     <string i:nil="true" />
                   </_items>
-                  <_size>7</_size>
-                  <_version>7</_version>
+                  <_size>2</_size>
+                  <_version>2</_version>
                 </ArrayOfstring>
               </value>
             </item>

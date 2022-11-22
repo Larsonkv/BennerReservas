@@ -4,6 +4,16 @@
   <Level>Tecnologia</Level>
   <MenuItems>
     <MenuItemPortable>
+      <Id>PAGES_RESERVAS_WIZARDNOVARESERVA</Id>
+      <Order>5</Order>
+      <Type>Page</Type>
+      <Name>Wizard Nova Reserva</Name>
+      <PageId>PAGES_RESERVAS_WIZARDNOVARESERVA</PageId>
+      <Active>true</Active>
+      <Level>Benner</Level>
+      <CssParaIcone>fa fa-calendar-plus-o</CssParaIcone>
+    </MenuItemPortable>
+    <MenuItemPortable>
       <Id>PESSOA</Id>
       <Order>10</Order>
       <Type>Command</Type>

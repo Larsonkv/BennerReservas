@@ -296,6 +296,13 @@
     <Compile Include="Entidades\DocumentosFinanceiros.userinterface.cs">
       <DependentUpon>DocumentosFinanceiros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\ModelosCarros.cs" />
+    <Compile Include="Entidades\ModelosCarros.properties.cs">
+      <DependentUpon>ModelosCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ModelosCarros.userinterface.cs">
+      <DependentUpon>ModelosCarros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Paises.cs" />
     <Compile Include="Entidades\Paises.Dao.cs" />
     <Compile Include="Entidades\Paises.properties.cs">
@@ -333,6 +340,20 @@
     <Compile Include="Entidades\Reservas.userinterface.cs">
       <DependentUpon>Reservas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entradas\VtWizardPessoa.cs" />
+    <Compile Include="Entradas\VtWizardPessoa.properties.cs">
+      <DependentUpon>VtWizardPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\VtWizardPessoa.userinterface.cs">
+      <DependentUpon>VtWizardPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\VtWizardReserva.cs" />
+    <Compile Include="Entradas\VtWizardReserva.properties.cs">
+      <DependentUpon>VtWizardReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\VtWizardReserva.userinterface.cs">
+      <DependentUpon>VtWizardReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IGerenciadorReservas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -351,7 +372,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Comum\Benner.Reservas.Comum\Benner.Reservas.Comum.csproj">
+      <Project>{0ae723bd-ae32-43ce-8c4c-0a55e7e6540b}</Project>
+      <Name>Benner.Reservas.Comum</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entradas\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy $(TargetPath) C:\Benner\Fontes\Reservas\WebApp\Bin /Y /R

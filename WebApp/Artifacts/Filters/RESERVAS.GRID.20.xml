@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<FilterPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ViewName>RESERVAS.GRID</ViewName>
+  <Level>Benner</Level>
+  <EntityName>RESERVAS</EntityName>
+  <Filters>
+    <FilterItemPortable>
+      <Name>Por Período</Name>
+      <Type>Conditions</Type>
+      <ShowEmptyResults>false</ShowEmptyResults>
+      <ShowSimpleSearch>true</ShowSimpleSearch>
+      <AdvancedFilterConditions>1</AdvancedFilterConditions>
+      <ConditionsContent><![CDATA[<ArrayOfFilterCondition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FilterCondition Index="1">
+    <TableName xsi:nil="true" />
+    <Value xsi:type="xsd:string">  ((A.DATAINICIO BETWEEN :DATAINICIO AND :DATAFIM OR A.DATAFIM BETWEEN :DATAINICIO AND :DATAFIM) OR (:DATAINICIO BETWEEN A.DATAINICIO AND A.DATAFIM OR :DATAFIM BETWEEN A.DATAINICIO AND A.DATAFIM))</Value>
+    <Label xsi:nil="true" />
+    <UserInputRequired>true</UserInputRequired>
+    <Required>false</Required>
+    <IsManuallyDefined>true</IsManuallyDefined>
+    <ParameterCollection>
+      <ManuallyDefinedConditionParameter>
+        <Name>DATAINICIO</Name>
+      </ManuallyDefinedConditionParameter>
+      <ManuallyDefinedConditionParameter>
+        <Name>DATAFIM</Name>
+      </ManuallyDefinedConditionParameter>
+    </ParameterCollection>
+  </FilterCondition>
+</ArrayOfFilterCondition>
+]]></ConditionsContent>
+      <WhereClauseContent><![CDATA[<WhereClause xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Where>1=1</Where>
+  <Parameters />
+</WhereClause>
+]]></WhereClauseContent>
+      <Visible>true</Visible>
+    </FilterItemPortable>
+    <FilterItemPortable>
+      <Name>Por Período e Marca</Name>
+      <Type>VirtualTable</Type>
+      <ShowEmptyResults>false</ShowEmptyResults>
+      <ShowSimpleSearch>false</ShowSimpleSearch>
+      <VirtualTableFormView>VT_FILTRORESERVA_MARCASPERIODO.FORM</VirtualTableFormView>
+      <VirtualTableWhereClause>A.MODELOCARRO IN (SELECT HANDLE FROM MODELOSCARROS WHERE MARCA = @CAMPO(MARCA)) AND (A.DATAINICIO
+ &gt;=
+ @CAMPO(DATAINICIAL) AND A.DATAFIM
+ &lt;
+ @ADICIONARDIAS(@CAMPO(DATAFINAL), 1) OR (@CAMPO(DATAINICIAL) BETWEEN A.DATAINICIO AND A.DATAFIM OR @CAMPO(DATAFINAL) BETWEEN A.DATAINICIO AND A.DATAFIM))
+</VirtualTableWhereClause>
+      <Visible>true</Visible>
+    </FilterItemPortable>
+  </Filters>
+</FilterPortable>

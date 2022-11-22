@@ -22,25 +22,63 @@ namespace Benner.Reservas.Componentes
 
         public string AprovarReserva(IReservas reserva)
         {
-           string mensagem = string.Empty;
-           if(reserva.Status != ReservasStatusListaItens.ItemAguardandoAprovacao)
+            string mensagem = string.Empty;
+
+            if (reserva.Status != ReservasStatusListaItens.ItemAguardandoAprovacao)
             {
                 throw new BusinessException("Esta reserva não está aguardando aprovação!");
             }
 
             var carrosDisponiveis = _carrosDao.CarrosDisponiveisPorModeloEPeriodo(reserva.ModeloCarroHandle, reserva.DataInicio.Value, reserva.DataFim.Value);
-            if(carrosDisponiveis != null && carrosDisponiveis.Count > 0)
+
+            if (carrosDisponiveis != null && carrosDisponiveis.Count > 0)
             {
                 reserva.CarroHandle = carrosDisponiveis[0]["HANDLE"].GetInt32();
                 reserva.Status = ReservasStatusListaItens.ItemReservado;
-                mensagem = "Reserva aprovada com sucesso!";
+                mensagem = "Reserva aprovada com sucesso!!!";
             }
             else
             {
                 reserva.Status = ReservasStatusListaItens.ItemRecusado;
-                mensagem = "Reserva recusada! Não existem carros do modelo selecionado no período requisitado";
+                mensagem = "Reserva Recusada! Não existem carros do modelo selecionado no período requisitado!";
             }
             _reservasDao.Save(reserva);
+
+            return mensagem;
+        }
+
+        public string DevolverReserva(IReservas reserva)
+        {
+            string mensagem = string.Empty;
+
+            if (reserva.Status == ReservasStatusListaItens.ItemReservado)
+            {
+                reserva.Status = ReservasStatusListaItens.ItemDevolvido;
+                mensagem = "Reservas devolvida com sucesso!";
+            }
+            else
+            {
+                throw new BusinessException("Esta reserva não está efetiva - Status reservada!");
+            }
+            _reservasDao.Save(reserva);
+            return mensagem;
+        }
+
+        public string RecusarReserva(IReservas reserva)
+        {
+            string mensagem = string.Empty;
+
+            if (reserva.Status == ReservasStatusListaItens.ItemAguardandoAprovacao)
+            {
+                reserva.Status = ReservasStatusListaItens.ItemRecusado;
+                mensagem = "Reserva recusada com sucesso!";
+            }
+            else
+            {
+                throw new BusinessException("A reserva não pode ser recusada, pois não está aguardando aprovação!");
+            }
+            _reservasDao.Save(reserva);
+
             return mensagem;
         }
     }

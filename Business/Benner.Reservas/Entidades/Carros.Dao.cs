@@ -17,7 +17,7 @@ namespace Benner.Reservas.Entidades
     {
         public IList<EntityBase> CarrosDisponiveisPorModeloEPeriodo(Handle modelo, DateTime dataInicio, DateTime dataFim)
         {
-            Query query = new Query(@"SELECT CAR.HANDLE, CAR.IDENTIFICADOR
+            Query query = new Query(@"SELECT CAR.HANDLE, CAR.IDENTIFICADOR, MOD.NOME
                     FROM CARROS CAR
                         JOIN MODELOSCARROS MOD ON CAR.MODELO = MOD.HANDLE
                     WHERE CAR.MODELO = :MODELO

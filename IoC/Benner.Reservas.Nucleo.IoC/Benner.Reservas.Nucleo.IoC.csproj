@@ -293,6 +293,10 @@
       <Project>{f4dacbb7-c9be-499c-a6c5-8778f2c09203}</Project>
       <Name>Benner.Reservas.Componentes</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Comum\Benner.Reservas.Comum\Benner.Reservas.Comum.csproj">
+      <Project>{0ae723bd-ae32-43ce-8c4c-0a55e7e6540b}</Project>
+      <Name>Benner.Reservas.Comum</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -317,4 +321,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\MongoDB.Driver.Core.signed.2.11.2\build\MongoDB.Driver.Core.signed.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MongoDB.Driver.Core.signed.2.11.2\build\MongoDB.Driver.Core.signed.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(TargetPath) C:\temp\BEF\Reservas /Y /R</PostBuildEvent>
+  </PropertyGroup>
 </Project>

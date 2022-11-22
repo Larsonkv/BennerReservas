@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benner.Reservas.Nucleo.IoC"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benner.Reservas.Wes.Nucleo.IoC", "IoC\Benner.Reservas.Wes.Nucleo.IoC\Benner.Reservas.Wes.Nucleo.IoC.csproj", "{8C827723-7556-42E4-870E-AEF0E18F016D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benner.Reservas.Comum", "Comum\Benner.Reservas.Comum\Benner.Reservas.Comum.csproj", "{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{8C827723-7556-42E4-870E-AEF0E18F016D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C827723-7556-42E4-870E-AEF0E18F016D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C827723-7556-42E4-870E-AEF0E18F016D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

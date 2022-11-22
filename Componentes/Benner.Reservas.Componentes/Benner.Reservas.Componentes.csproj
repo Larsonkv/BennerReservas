@@ -304,6 +304,10 @@
       <Project>{a4afd4e6-f1b3-439d-ae40-3f1255f18f88}</Project>
       <Name>Benner.Reservas[Business]</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Comum\Benner.Reservas.Comum\Benner.Reservas.Comum.csproj">
+      <Project>{0ae723bd-ae32-43ce-8c4c-0a55e7e6540b}</Project>
+      <Name>Benner.Reservas.Comum</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

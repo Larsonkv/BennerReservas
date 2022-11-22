@@ -31,7 +31,7 @@ namespace Benner.Reservas.Entidades
     {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        Benner.Tecnologia.Common.IEntityBase CarroInstance
+        Benner.Reservas.Entidades.ICarros CarroInstance
         {
             get;
             set;
@@ -78,7 +78,7 @@ namespace Benner.Reservas.Entidades
         }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        Benner.Tecnologia.Common.IEntityBase ModeloCarroInstance
+        Benner.Reservas.Entidades.IModelosCarros ModeloCarroInstance
         {
             get;
             set;
@@ -258,7 +258,7 @@ namespace Benner.Reservas.Entidades
 
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        public Benner.Tecnologia.Common.IEntityBase CarroInstance
+        public Benner.Reservas.Entidades.ICarros CarroInstance
         {
             get
             {
@@ -275,7 +275,7 @@ namespace Benner.Reservas.Entidades
 					Carro = null;
 					return;
                 }
-                Carro.Instance = (EntityBase) value;
+                Carro.Instance = (Benner.Reservas.Entidades.Carros) value;
             }
         }
         
@@ -297,11 +297,11 @@ namespace Benner.Reservas.Entidades
         /// Opcional = S, Invisível = True, Pesquisar = CARROS
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        public Benner.Tecnologia.Common.EntityAssociation Carro
+        public Benner.Tecnologia.Common.EntityAssociation<Benner.Reservas.Entidades.Carros> Carro
         {
             get
             {
-                return Fields["CARRO"] as Benner.Tecnologia.Common.EntityAssociation;
+                return (Fields["CARRO"] as EntityAssociation).Wrap<Benner.Reservas.Entidades.Carros>(Benner.Reservas.Entidades.Carros.Get);
             }
             set
             {
@@ -311,7 +311,7 @@ namespace Benner.Reservas.Entidades
                 }
                 else
                 {
-                    if (value.IsLoaded)
+                    if (value.Association.IsLoaded)
                     {
                         this.Carro.Instance = value.Instance;
                     }
@@ -375,7 +375,7 @@ namespace Benner.Reservas.Entidades
         }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        public Benner.Tecnologia.Common.IEntityBase ModeloCarroInstance
+        public Benner.Reservas.Entidades.IModelosCarros ModeloCarroInstance
         {
             get
             {
@@ -392,7 +392,7 @@ namespace Benner.Reservas.Entidades
 					ModeloCarro = null;
 					return;
                 }
-                ModeloCarro.Instance = (EntityBase) value;
+                ModeloCarro.Instance = (Benner.Reservas.Entidades.ModelosCarros) value;
             }
         }
         
@@ -414,11 +414,11 @@ namespace Benner.Reservas.Entidades
         /// Opcional = N, Invisível = False, Pesquisar = MODELOSCARROS
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        public Benner.Tecnologia.Common.EntityAssociation ModeloCarro
+        public Benner.Tecnologia.Common.EntityAssociation<Benner.Reservas.Entidades.ModelosCarros> ModeloCarro
         {
             get
             {
-                return Fields["MODELOCARRO"] as Benner.Tecnologia.Common.EntityAssociation;
+                return (Fields["MODELOCARRO"] as EntityAssociation).Wrap<Benner.Reservas.Entidades.ModelosCarros>(Benner.Reservas.Entidades.ModelosCarros.Get);
             }
             set
             {
@@ -428,7 +428,7 @@ namespace Benner.Reservas.Entidades
                 }
                 else
                 {
-                    if (value.IsLoaded)
+                    if (value.Association.IsLoaded)
                     {
                         this.ModeloCarro.Instance = value.Instance;
                     }

@@ -22,13 +22,32 @@ namespace Benner.Reservas.Entidades
     /// </summary>
     public partial class Pessoas
     {
+
+        protected override void Editing()
+        {
+            if (this.DataAlteracao == null)
+            {
+                this.DataAlteracao = DateTime.Now;
+            }
+            base.Editing();
+        }
+
+        protected override void Edited()
+        {
+            if(this.DataAlteracao == null)
+            {
+                this.DataAlteracao = DateTime.Now;
+            }
+            base.Edited();
+        }
+
         protected override void Validating()
         {
             if (this.DataCriacao == null)
             {
                 this.DataCriacao = DateTime.Now;
             }
-            else if(this.DataAlteracao ==null)
+            else if(this.DataAlteracao == null)
             {
                 this.DataAlteracao = DateTime.Now;
             }

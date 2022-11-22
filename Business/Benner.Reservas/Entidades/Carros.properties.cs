@@ -53,7 +53,7 @@ namespace Benner.Reservas.Entidades
         }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        Benner.Tecnologia.Common.IEntityBase ModeloInstance
+        Benner.Reservas.Entidades.IModelosCarros ModeloInstance
         {
             get;
             set;
@@ -152,7 +152,7 @@ namespace Benner.Reservas.Entidades
         }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        public Benner.Tecnologia.Common.IEntityBase ModeloInstance
+        public Benner.Reservas.Entidades.IModelosCarros ModeloInstance
         {
             get
             {
@@ -169,7 +169,7 @@ namespace Benner.Reservas.Entidades
 					Modelo = null;
 					return;
                 }
-                Modelo.Instance = (EntityBase) value;
+                Modelo.Instance = (Benner.Reservas.Entidades.ModelosCarros) value;
             }
         }
         
@@ -191,11 +191,11 @@ namespace Benner.Reservas.Entidades
         /// Opcional = N, Invisível = False, Pesquisar = MODELOSCARROS
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("BEF Code Generator", "22.0.36.3")]
-        public Benner.Tecnologia.Common.EntityAssociation Modelo
+        public Benner.Tecnologia.Common.EntityAssociation<Benner.Reservas.Entidades.ModelosCarros> Modelo
         {
             get
             {
-                return Fields["MODELO"] as Benner.Tecnologia.Common.EntityAssociation;
+                return (Fields["MODELO"] as EntityAssociation).Wrap<Benner.Reservas.Entidades.ModelosCarros>(Benner.Reservas.Entidades.ModelosCarros.Get);
             }
             set
             {
@@ -205,7 +205,7 @@ namespace Benner.Reservas.Entidades
                 }
                 else
                 {
-                    if (value.IsLoaded)
+                    if (value.Association.IsLoaded)
                     {
                         this.Modelo.Instance = value.Instance;
                     }

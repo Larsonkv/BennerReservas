@@ -11,7 +11,7 @@ namespace Benner.Reservas.Wes.Nucleo.IoC
 {
     public class RegistradorDependencias : NinjectModule
     {
-        public override void Load() 
+        public override void Load()
         {
             BusinessComponent.RegisterProxy<IGerenciadorReservas>(Kernel);
         }

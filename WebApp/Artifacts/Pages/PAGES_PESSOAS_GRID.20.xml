@@ -37,7 +37,8 @@
   <FormUrl>~/Pages/Pessoas/Form.aspx</FormUrl>
   <ShowExport>true</ShowExport>
   <UserDefinedDisableRowSelection>false</UserDefinedDisableRowSelection>
-</SimpleGridAttributes>]]></XmlAttributes>
+</SimpleGridAttributes>
+]]></XmlAttributes>
       <Level>Benner</Level>
     </PageWidgetPortable>
   </Widgets>

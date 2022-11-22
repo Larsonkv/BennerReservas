@@ -11,18 +11,17 @@ namespace Benner.Reservas.Entidades
         [ViewLoaded]
         public void ViewLoaded()
         {
+            VerificaDataSolicitacao();
             MostrarQuilometragem();
         }
 
-        //public void VerificaDataSolicitacao()
-        //{
-        //    var dataSol =this.DataSolicitacao;
-        //    var dataMin = dataSol.Value.AddDays(7);
-        //    if (dataMin < DateTime.Now)
-        //    {
-        //        this[FieldNames.DataSolicitacao].Label = "Data de solicitação (mais 7 dias)";
-        //    }
-        //}
+        public void VerificaDataSolicitacao()
+        {
+            if (this.DataSolicitacao == null || this.DataSolicitacao.Value.AddDays(7) < DateTime.Now)
+            {
+                this[FieldNames.DataSolicitacao].Label = "Data de solicitação (mais 7 dias)";
+            }
+        }
 
         [FieldChanged(FieldNames.Plano)]
         public void PlanoChange()

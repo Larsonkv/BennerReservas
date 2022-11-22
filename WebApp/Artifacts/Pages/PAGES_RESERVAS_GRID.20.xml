@@ -40,6 +40,37 @@
 </SimpleGridAttributes>]]></XmlAttributes>
       <Level>Benner</Level>
     </PageWidgetPortable>
+    <PageWidgetPortable>
+      <Id>RESERVAS</Id>
+      <MasterWidgetId>GRIDRESERVAS</MasterWidgetId>
+      <Title>Reservas</Title>
+      <Order>110</Order>
+      <ShowTitle>true</ShowTitle>
+      <PortletCssClass />
+      <FontIcon />
+      <Subtitle />
+      <ChromeState>Normal</ChromeState>
+      <PortletLayout>Default</PortletLayout>
+      <WidgetTypeId>SimpleGrid</WidgetTypeId>
+      <BootstrapCols>12</BootstrapCols>
+      <XmlAttributes><![CDATA[<SimpleGridAttributes>
+  <CanDelete>true</CanDelete>
+  <CanUpdate>true</CanUpdate>
+  <CanInsert>true</CanInsert>
+  <EntityViewName>RESERVAS.GRID</EntityViewName>
+  <Mode>1</Mode>
+  <UserDefinedSelectColumnVisible>false</UserDefinedSelectColumnVisible>
+  <UserDefinedPageSize>10</UserDefinedPageSize>
+  <SystemFilterOnly>false</SystemFilterOnly>
+  <DisplayRowCommand>true</DisplayRowCommand>
+  <CompanyFilterMode>1</CompanyFilterMode>
+  <FormUrl>~/Pages/Reservas/Form.aspx</FormUrl>
+  <ShowExport>true</ShowExport>
+  <UserDefinedDisableRowSelection>false</UserDefinedDisableRowSelection>
+</SimpleGridAttributes>
+]]></XmlAttributes>
+      <Level>Benner</Level>
+    </PageWidgetPortable>
   </Widgets>
   <Resources />
 </PagePortable>
