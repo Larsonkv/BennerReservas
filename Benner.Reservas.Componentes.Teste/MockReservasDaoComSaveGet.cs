@@ -6,7 +6,7 @@ using Benner.Tecnologia.Common;
 
 namespace Benner.Reservas.Componentes.Teste
 {
-    internal class MockReservasDaoComSaveGet : IReservasDao
+    public class MockReservasDaoComSaveGet : IReservasDao
     {
         private IReservas _reserva;
 

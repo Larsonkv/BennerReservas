@@ -55,6 +55,10 @@
     <Reference Include="Benner.Tecnologia.Common2, Version=2008.0.0.0, Culture=neutral, PublicKeyToken=f2db26731026fd37, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Benner.Tecnologia.Common2.22.0.36.3\lib\Benner.Tecnologia.Common2.dll</HintPath>
     </Reference>
+    <Reference Include="Benner.Tecnologia.Metadata, Version=2008.0.0.0, Culture=neutral, PublicKeyToken=f2db26731026fd37, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WebApp\Bin\Benner.Tecnologia.Metadata.dll</HintPath>
+    </Reference>
     <Reference Include="Benner.Tecnologia.Runner.Classes, Version=7.4.5.0, Culture=neutral, PublicKeyToken=f2db26731026fd37, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Benner.Tecnologia.Runner.Classes.7.4.5\lib\Benner.Tecnologia.Runner.Classes.dll</HintPath>
     </Reference>
