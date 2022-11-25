@@ -35,5 +35,28 @@
       <Level>Benner</Level>
     </PageWidgetPortable>
   </Widgets>
-  <Resources />
+  <Resources>
+    <PageResourcePortable>
+      <Id>923CC2A0FD674B3F95D5379FC44F8320</Id>
+      <ResourceType>JavaScript</ResourceType>
+      <Content><![CDATA[$(document).ready(function() {
+    if(window.location.href.indexOf('novaReserva') != -1) {
+        toastr.success('Esta pessoa acabou de ser cadastrada. Verifique as informações faltantes.', 'Sucesso!');
+    }
+})
+]]></Content>
+      <Level>Benner</Level>
+    </PageResourcePortable>
+    <PageResourcePortable>
+      <Id>5B287F0EF50F4D369D7C75023AD8DE1F</Id>
+      <ResourceType>CSS</ResourceType>
+      <Content><![CDATA[.form-control:hover{
+    background: rgb(192,251,153);
+    font-family: Arial;
+    font-weight: bold;
+}
+]]></Content>
+      <Level>Benner</Level>
+    </PageResourcePortable>
+  </Resources>
 </PagePortable>

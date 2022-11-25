@@ -34,6 +34,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benner.Reservas.Wes.Nucleo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benner.Reservas.Comum", "Comum\Benner.Reservas.Comum\Benner.Reservas.Comum.csproj", "{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{8EAC5A81-9EE6-480F-8ED4-731D0CE7B322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benner.Reservas.Componentes.Teste", "Benner.Reservas.Componentes.Teste\Benner.Reservas.Componentes.Teste.csproj", "{61607BC6-ABC4-4AAE-8BE3-DA4148E6E190}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,9 +68,16 @@ Global
 		{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AE723BD-AE32-43CE-8C4C-0A55E7E6540B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61607BC6-ABC4-4AAE-8BE3-DA4148E6E190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61607BC6-ABC4-4AAE-8BE3-DA4148E6E190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61607BC6-ABC4-4AAE-8BE3-DA4148E6E190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61607BC6-ABC4-4AAE-8BE3-DA4148E6E190}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61607BC6-ABC4-4AAE-8BE3-DA4148E6E190} = {8EAC5A81-9EE6-480F-8ED4-731D0CE7B322}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {80847D84-0238-4C24-AD15-BE8528E15B57}

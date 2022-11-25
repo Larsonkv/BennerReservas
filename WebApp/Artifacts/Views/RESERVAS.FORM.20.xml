@@ -62,6 +62,10 @@
             <layout>OneColumn</layout>
             <bootstrapCols>Col6</bootstrapCols>
           </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="HANDLE">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col6</bootstrapCols>
+          </FormPageItem>
         </Items>
       </FormPage>
     </Pages>
@@ -169,6 +173,13 @@
         <renderTitle>true</renderTitle>
         <SystemInstanceName>RESERVAS</SystemInstanceName>
         <Path>PESSOA&gt;PESSOAS.MUNICIPIO&gt;MUNICIPIOS.NOME</Path>
+      </FormFieldDefinition>
+      <FormFieldDefinition key="HANDLE">
+        <visible>true</visible>
+        <DataAccessLevel>Read</DataAccessLevel>
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle>true</renderTitle>
       </FormFieldDefinition>
     </FieldDefinitions>
     <Commands>

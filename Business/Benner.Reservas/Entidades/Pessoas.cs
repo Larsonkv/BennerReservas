@@ -23,6 +23,11 @@ namespace Benner.Reservas.Entidades
     public partial class Pessoas
     {
 
+        public static Handle NovoHandle()
+        {
+            return NewHandle();
+        }
+
         protected override void Editing()
         {
             if (this.DataAlteracao == null)

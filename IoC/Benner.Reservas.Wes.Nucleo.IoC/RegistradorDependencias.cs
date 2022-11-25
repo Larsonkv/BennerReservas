@@ -14,6 +14,7 @@ namespace Benner.Reservas.Wes.Nucleo.IoC
         public override void Load()
         {
             BusinessComponent.RegisterProxy<IGerenciadorReservas>(Kernel);
+            BusinessComponent.RegisterProxy<INotificadorReservasAprovadas>(Kernel);
         }
     }
 }

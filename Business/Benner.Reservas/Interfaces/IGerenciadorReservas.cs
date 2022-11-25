@@ -1,4 +1,5 @@
-﻿using Benner.Reservas.Entidades;
+﻿using Benner.Reservas.Comum;
+using Benner.Reservas.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,14 @@ namespace Benner.Reservas.Interfaces
         string DevolverReserva(IReservas reserva);
 
         string RecusarReserva(IReservas reserva);
+
+        NovaReservaResponse CriarNovaReserva(NovaReservaRequest request);
+
+        NovaPessoaNovaReservaResponse CriarNovaPessoaEReserva(NovaPessoaNovaReservaRequest request);
+
+        ReservaPorStatusResponse[] ReservasPorStatus(int status);
+
+        ReservaPorStatusResponse[] ReservasPorStatusData(ReservaPorStatusRequest request);
+
     }
 }

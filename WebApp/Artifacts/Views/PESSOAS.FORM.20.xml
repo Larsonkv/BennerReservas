@@ -27,6 +27,10 @@
             <bootstrapCols xsi:nil="true" />
             <thumbNailSize xsi:nil="true" />
           </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="DATANASCIMENTO">
+            <layout>OneColumn</layout>
+            <bootstrapCols>Col2</bootstrapCols>
+          </FormPageItem>
         </Items>
       </FormPage>
       <FormPage key="CONTATOS" inherited="true">
@@ -98,8 +102,8 @@
         </Items>
       </FormPage>
     </Pages>
-    <Column xsi:nil="true" />
-    <FormCaptionPosition xsi:nil="true" />
+    <Column>4</Column>
+    <FormCaptionPosition>Left</FormCaptionPosition>
     <SubstituteViewName xsi:nil="true" />
     <FieldDefinitions>
       <FormFieldDefinition xsi:type="FormFieldStringDefinition" key="NOME" inherited="true">
@@ -227,7 +231,7 @@
         <DataAccessLevel xsi:nil="true" />
         <Required xsi:nil="true" />
         <HasScriptEvent xsi:nil="true" />
-        <renderTitle xsi:nil="true" />
+        <renderTitle>true</renderTitle>
       </FormFieldDefinition>
       <FormFieldDefinition key="DATACRIACAO" inherited="true">
         <visible xsi:nil="true" />

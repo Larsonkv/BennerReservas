@@ -1,4 +1,5 @@
 ﻿using Benner.Reservas.Componentes;
+using Benner.Reservas.Componentes.Tasks;
 using Benner.Reservas.Interfaces;
 using Benner.Tecnologia.Business;
 using Ninject.Modules;
@@ -15,6 +16,7 @@ namespace Benner.Reservas.Nucleo.IoC
         public override void Load()
         {
             BusinessComponent.Register<IGerenciadorReservas, GerenciadorReservas>(Kernel);
+            BusinessComponent.Register<INotificadorReservasAprovadas, NotificadorReservasAprovadasTask>(Kernel);
         }
     }
 }

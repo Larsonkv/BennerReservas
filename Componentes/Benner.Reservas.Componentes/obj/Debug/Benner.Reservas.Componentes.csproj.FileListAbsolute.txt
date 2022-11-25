@@ -10,3 +10,4 @@ C:\Benner\Fontes\Reservas\Componentes\Benner.Reservas.Componentes\obj\Debug\Benn
 C:\Benner\Fontes\Reservas\Componentes\Benner.Reservas.Componentes\obj\Debug\Benner.Reservas.Componentes.csproj.CopyComplete
 C:\Benner\Fontes\Reservas\Componentes\Benner.Reservas.Componentes\obj\Debug\Benner.Reservas.Componentes.dll
 C:\Benner\Fontes\Reservas\Componentes\Benner.Reservas.Componentes\obj\Debug\Benner.Reservas.Componentes.pdb
+C:\Benner\Fontes\Reservas\WebApp\Provider\Bin\Benner.Reservas.Componentes.xml

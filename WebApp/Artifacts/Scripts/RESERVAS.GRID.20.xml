@@ -9,7 +9,7 @@
       <LanguageName>IronPython</LanguageName>
       <SourceCode>def InitializeRow(entity, row):
     row.GetCellByName("STATUS").Tooltip = row.GetCellByName("STATUS").Text
-    row.GetCellByName("STATUS").Text = ""
+    # row.GetCellByName("STATUS").Text = ""
     if (entity["STATUS"].GetInt32() == 1):
         row.GetCellByName("STATUS").FontIcon = "fa fa-clock-o"
         row.GetCellByName("STATUS").TextColor = "#c49f47"

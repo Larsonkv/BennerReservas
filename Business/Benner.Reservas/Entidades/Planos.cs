@@ -22,9 +22,20 @@ namespace Benner.Reservas.Entidades
     /// </summary>
     public partial class Planos
     {
+        public static void AjustaValorReferencia(BusinessArgs args)
+        {
+            var planos = Planos.GetAll();
+            foreach(var plano in planos)
+            {
+                var valorAtual = plano.ValorReferencia;
+                plano.ValorReferencia = valorAtual + (valorAtual * Convert.ToDecimal(args.DataEntity.Fields["PERCENTUAL"])/100);
+                plano.Save();
+            }
+            args.Message = "Atualização bem sucedida!";
+        }
+
         public override void Validate(ValidationResults validationResults)
         {
-
             if (this.DataInicio > this.DataFim)
             {
                 validationResults.AddResult(new EntityValidationResult("A data final não pode ser menor que a data inicial!"));

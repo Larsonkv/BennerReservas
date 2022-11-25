@@ -160,6 +160,31 @@
           <IsModalNavigation>false</IsModalNavigation>
         </OutputDefinition>
       </Command>
+      <Command title="Chama Carros" key="CMD_CHAMACARROS">
+        <visible>false</visible>
+        <showModal>false</showModal>
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable>false</showInAllLevelsStructuredTable>
+        <runInEditMode>false</runInEditMode>
+        <context>Table</context>
+        <OutputDefinition xsi:type="GridLinkDefinition">
+          <Url>~/Pages/Carros/Grid.aspx</Url>
+          <IsModalPage>false</IsModalPage>
+          <IsModalNavigation>false</IsModalNavigation>
+          <WhereClause>
+            <Where>A.ATIVO = 'N'</Where>
+            <Parameters />
+          </WhereClause>
+          <SystemInstanceName>RESERVAS</SystemInstanceName>
+          <TargetEntityDefinitionName>CARROS</TargetEntityDefinitionName>
+          <TargetSystemInstanceName>RESERVAS</TargetSystemInstanceName>
+          <WhereClauseParameters />
+          <ParentEntityHandle>
+            <NullableValue xsi:nil="true" />
+          </ParentEntityHandle>
+          <DefaultFilterName />
+        </OutputDefinition>
+      </Command>
     </Commands>
   </GridDefinition>
 </ViewPortable>

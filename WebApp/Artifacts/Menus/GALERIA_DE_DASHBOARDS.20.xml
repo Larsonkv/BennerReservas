@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<MenuPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>GALERIA_DE_DASHBOARDS</Id>
+  <Level>Tecnologia</Level>
+  <MenuItems>
+    <MenuItemPortable>
+      <Id>PAGES_DASHBOARDS_RESERVAS</Id>
+      <Order>100</Order>
+      <Type>Page</Type>
+      <Name>Dashboard Reservas</Name>
+      <PageId>PAGES_DASHBOARDS_RESERVAS</PageId>
+      <Active>true</Active>
+      <Level>Benner</Level>
+      <CssParaIcone>fa fa-dashboard</CssParaIcone>
+    </MenuItemPortable>
+  </MenuItems>
+</MenuPortable>

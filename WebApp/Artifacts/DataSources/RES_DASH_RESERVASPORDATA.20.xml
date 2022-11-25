@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<DataSourcePortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Identifier>RES_DASH_RESERVASPORDATA</Identifier>
+  <Name>Reservas por Data</Name>
+  <Content><![CDATA[<DataSourceDefinition>
+  <FromSql Alias="A" SelectCommand="SELECT&#xD;&#xA;    @TRUNCARHORA(DATASOLICITACAO) DIA, COUNT(*) QTDE&#xD;&#xA;FROM RESERVAS&#xD;&#xA;    GROUP BY @TRUNCARHORA(DATASOLICITACAO) " />
+  <Fields>
+    <DateField Alias="DIA" From="A" Path="DIA" FieldDateFormat="DayMonthYear" FieldTimeFormat="HourMinuteSecond" />
+    <Field Alias="QTDE" From="A" Path="QTDE" />
+  </Fields>
+</DataSourceDefinition>
+]]></Content>
+  <Level>Benner</Level>
+  <ContemDadosPessoaisLgpd>false</ContemDadosPessoaisLgpd>
+</DataSourcePortable>

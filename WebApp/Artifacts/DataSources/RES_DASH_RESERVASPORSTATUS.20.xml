@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DataSourcePortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Identifier>RES_DASH_RESERVASPORSTATUS</Identifier>
+  <Name>Reservas por Status</Name>
+  <Content><![CDATA[<DataSourceDefinition>
+  <FromSql Alias="A" SelectCommand="SELECT&#xD;&#xA;    STATUS,&#xD;&#xA;    CASE STATUS WHEN 1 then 'Aguardando Aprovação'&#xD;&#xA;                WHEN 2 THEN 'Reservado'&#xD;&#xA;                WHEN 3 THEN 'Recusado'&#xD;&#xA;                WHEN 4 THEN 'Devolvido'&#xD;&#xA;                ELSE 'Processado' END AS DESCRICAO,&#xD;&#xA;    COUNT(*) QTDE&#xD;&#xA;FROM RESERVAS&#xD;&#xA;GROUP BY STATUS" />
+  <Fields>
+    <Field Alias="STATUS" From="A" Path="STATUS" />
+    <Field Alias="DESCRICAO" From="A" Path="DESCRICAO" />
+    <Field Alias="QTDE" From="A" Path="QTDE" />
+  </Fields>
+</DataSourceDefinition>
+]]></Content>
+  <Level>Benner</Level>
+  <ContemDadosPessoaisLgpd>false</ContemDadosPessoaisLgpd>
+</DataSourcePortable>

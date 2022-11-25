@@ -1,5 +1,7 @@
-﻿using Benner.Reservas.Interfaces;
+﻿using Benner.Reservas.Comum;
+using Benner.Reservas.Interfaces;
 using Benner.Tecnologia.Business;
+using Benner.Tecnologia.Business.Tasks;
 using Benner.Tecnologia.Business.Validation;
 using Benner.Tecnologia.Common;
 using Microsoft.Practices.EnterpriseLibrary.Validation;
@@ -47,7 +49,25 @@ namespace Benner.Reservas.Entidades
         public void Aprovar(BusinessArgs args)
         {
             //var gerenciador = Benner.Tecnologia.Common.IoC.DependencyContainer.Get<IGerenciadorReservas>();
-            args.Message = this.gerenciador.AprovarReserva(this);
+            try
+            {
+                args.Message = gerenciador.AprovarReserva(this);
+                if (!string.IsNullOrEmpty(PessoaInstance.EMail))
+                {
+                    string mensagem = $"Reserva de { ModeloCarroInstance.Nome } no período de { DataInicio } até { DataFim } aprovada em { DateTime.Now }.";
+                    NotificacaoReservaAprovadaRequest request = new NotificacaoReservaAprovadaRequest(PessoaInstance.EMail, "Notificação de reserva aprovada", mensagem);
+
+                    BusinessTask.Factory.NewComponentTask<INotificadorReservasAprovadas>()
+                        .WithDescription("Notificação de aprovação")
+                        .WithNotification()
+                        .WithRequestValue(request)
+                        .Start();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         private void AtribuiSomenteLeituraDataDeSolicitacao()

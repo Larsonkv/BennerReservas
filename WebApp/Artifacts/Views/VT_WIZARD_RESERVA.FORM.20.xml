@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<ViewPortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>VT_WIZARD_RESERVA.FORM</Name>
+  <Level>Benner</Level>
+  <EntityName>VT_WIZARD_RESERVA</EntityName>
+  <Type>Formulário</Type>
+  <Version>14</Version>
+  <FormDefinition entityDefinitionName="VT_WIZARD_RESERVA" name="VT_WIZARD_RESERVA.FORM" title="VT_WIZARD_RESERVA" inherited="true">
+    <IsContextCached>false</IsContextCached>
+    <Fields />
+    <RecordReadOnly>false</RecordReadOnly>
+    <TableReadOnly>false</TableReadOnly>
+    <Pages>
+      <FormPage key="GERAL" inherited="true">
+        <visible xsi:nil="true" />
+        <Items>
+          <FormPageItem xsi:type="FormPageField" key="MODELOCARRO" inherited="true">
+            <layout xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="PLANO" inherited="true">
+            <layout xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="DATAINICIO" inherited="true">
+            <layout xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+          </FormPageItem>
+          <FormPageItem xsi:type="FormPageField" key="DATAFIM" inherited="true">
+            <layout xsi:nil="true" />
+            <bootstrapCols xsi:nil="true" />
+          </FormPageItem>
+        </Items>
+      </FormPage>
+    </Pages>
+    <Column xsi:nil="true" />
+    <FormCaptionPosition xsi:nil="true" />
+    <SubstituteViewName xsi:nil="true" />
+    <FieldDefinitions>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" key="MODELOCARRO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode xsi:nil="true" />
+        <SelectAnyStructuredLevel xsi:nil="true" />
+        <SearchOnEnter xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition xsi:type="FormFieldAssociationDefinition" key="PLANO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+        <CompanyFilterMode xsi:nil="true" />
+        <SelectAnyStructuredLevel xsi:nil="true" />
+        <SearchOnEnter xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="DATAINICIO" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+      <FormFieldDefinition key="DATAFIM" inherited="true">
+        <visible xsi:nil="true" />
+        <DataAccessLevel xsi:nil="true" />
+        <Required xsi:nil="true" />
+        <HasScriptEvent xsi:nil="true" />
+        <renderTitle xsi:nil="true" />
+      </FormFieldDefinition>
+    </FieldDefinitions>
+    <Commands>
+      <Command title="Avançar" image="fa fa-chevron-circle-right" key="Save" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal>false</showModal>
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable>false</showInAllLevelsStructuredTable>
+        <runInEditMode>false</runInEditMode>
+        <context xsi:nil="true" />
+        <OutputDefinition xsi:type="LocalLinkDefinition">
+          <Url />
+          <IsModalPage>false</IsModalPage>
+          <IsModalNavigation>false</IsModalNavigation>
+        </OutputDefinition>
+      </Command>
+      <Command title="" key="Cancel" inherited="true">
+        <visible xsi:nil="true" />
+        <showModal>false</showModal>
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable>false</showInAllLevelsStructuredTable>
+        <runInEditMode>false</runInEditMode>
+        <context xsi:nil="true" />
+        <OutputDefinition xsi:type="LocalLinkDefinition">
+          <Url />
+          <IsModalPage>false</IsModalPage>
+          <IsModalNavigation>false</IsModalNavigation>
+        </OutputDefinition>
+      </Command>
+      <Command title="Voltar" image="fa fa-chevron-circle-left" key="CMD_Voltar">
+        <visible>true</visible>
+        <showModal>false</showModal>
+        <modalSize xsi:nil="true" />
+        <showInAllLevelsStructuredTable>false</showInAllLevelsStructuredTable>
+        <runInEditMode>false</runInEditMode>
+        <context>Record</context>
+        <OutputDefinition xsi:type="LocalLinkDefinition">
+          <Url />
+          <IsModalPage>false</IsModalPage>
+          <IsModalNavigation>false</IsModalNavigation>
+        </OutputDefinition>
+      </Command>
+    </Commands>
+  </FormDefinition>
+</ViewPortable>

@@ -92,6 +92,52 @@
         <runInEditMode xsi:nil="true" />
         <context xsi:nil="true" />
       </Command>
+      <Command title="Ajustar Valor de Referência" image="fa fa-dollar" color="yellow" key="CMD_AjustaValorReferencia">
+        <visible>true</visible>
+        <showModal>true</showModal>
+        <modalSize>Small</modalSize>
+        <showInAllLevelsStructuredTable>false</showInAllLevelsStructuredTable>
+        <runInEditMode>false</runInEditMode>
+        <context>Table</context>
+        <InputDefinition xsi:type="FormLinkDefinition">
+          <Url>~/DefaultDataInput.aspx</Url>
+          <IsModalPage>false</IsModalPage>
+          <IsModalNavigation>false</IsModalNavigation>
+          <SystemInstanceName />
+          <TargetEntityDefinitionName>VT_VALORREFERENCIA_PLANO.CUSTOM.FORM</TargetEntityDefinitionName>
+          <TargetSystemInstanceName>RESERVAS</TargetSystemInstanceName>
+          <WhereClauseParameters />
+          <ParentEntityHandle>
+            <NullableValue xsi:nil="true" />
+          </ParentEntityHandle>
+          <Criteria>
+            <StartRowIndex>0</StartRowIndex>
+            <MaximumRows>0</MaximumRows>
+            <SortExpression />
+            <GroupExpression />
+            <Where />
+            <LookupResultBehavior>Default</LookupResultBehavior>
+            <CompanyFilterMode>CompanyAndBranch</CompanyFilterMode>
+            <Parameters />
+            <AutoGenerateParameters>false</AutoGenerateParameters>
+          </Criteria>
+          <GridEntityViewName />
+          <TargetEntityHandle>
+            <NullableValue xsi:nil="true" />
+          </TargetEntityHandle>
+          <TargetFormMode>Insert</TargetFormMode>
+          <IsStructuredTable>false</IsStructuredTable>
+          <StructuredFieldName />
+          <StructuredTableParentNode />
+          <UseTargetDefinitionName>false</UseTargetDefinitionName>
+        </InputDefinition>
+        <ProcessDefinition xsi:type="Function" functionName="AjustaValorReferencia" />
+        <OutputDefinition xsi:type="LocalLinkDefinition">
+          <Url />
+          <IsModalPage>false</IsModalPage>
+          <IsModalNavigation>false</IsModalNavigation>
+        </OutputDefinition>
+      </Command>
     </Commands>
   </GridDefinition>
 </ViewPortable>

@@ -1,4 +1,5 @@
-﻿using Benner.Reservas.Entidades;
+﻿using Benner.Reservas.Comum;
+using Benner.Reservas.Entidades;
 using Benner.Reservas.Interfaces;
 using Benner.Tecnologia.Business;
 using System;
@@ -11,13 +12,17 @@ namespace Benner.Reservas.Componentes
 {
     public class GerenciadorReservas : BusinessComponent<GerenciadorReservas>, IGerenciadorReservas
     {
+        private readonly ITransactionContextFactory _transactionContextFactory;
         private readonly ICarrosDao _carrosDao;
         private readonly IReservasDao _reservasDao;
+        private readonly IPessoasDao _pessoasDao;
 
-        public GerenciadorReservas(ICarrosDao carrosDao, IReservasDao reservasDao)
+        public GerenciadorReservas(ITransactionContextFactory transactionContextFactory, ICarrosDao carrosDao, IReservasDao reservasDao, IPessoasDao pessoasDao)
         {
+            _transactionContextFactory = transactionContextFactory;
             _carrosDao = carrosDao;
             _reservasDao = reservasDao;
+            _pessoasDao = pessoasDao;
         }
 
         public string AprovarReserva(IReservas reserva)
@@ -45,6 +50,48 @@ namespace Benner.Reservas.Componentes
             _reservasDao.Save(reserva);
 
             return mensagem;
+        }
+
+        public NovaPessoaNovaReservaResponse CriarNovaPessoaEReserva(NovaPessoaNovaReservaRequest request)
+        {
+            NovaPessoaNovaReservaResponse response = new NovaPessoaNovaReservaResponse();
+            using (ITransactionContext tc = _transactionContextFactory.Begin())
+            {
+                var handlePessoa = _pessoasDao.CriarPessoaSemRegraNegocio(request.Nome, request.Cpf, request.Email, request.TelefoneMovel);
+
+                var reserva = _reservasDao.Create();
+                reserva.PessoaHandle = handlePessoa;
+                reserva.ModeloCarroHandle = request.HandleModeloCarro;
+                reserva.PlanoHandle = request.HandlePlano;
+                reserva.DataInicio = request.DataInicio;
+                reserva.DataFim = request.DataFim;
+                reserva.DataSolicitacao = DateTime.Now;
+
+                _reservasDao.Save(reserva);
+
+                response.HandleReservaCriada = reserva.Handle;
+                response.HandlePessoaCriada = handlePessoa;
+                tc.Complete();
+            }
+            return response;
+        }
+
+        public NovaReservaResponse CriarNovaReserva(NovaReservaRequest request)
+        {
+            NovaReservaResponse response = new NovaReservaResponse();
+
+            var reserva = _reservasDao.Create();
+            reserva.ModeloCarroHandle = request.HandleModeloCarro;
+            reserva.PessoaHandle = request.HandlePessoa;
+            reserva.PlanoHandle = request.HandlePlano;
+            reserva.DataInicio = request.DataInicio;
+            reserva.DataFim = request.DataFim;
+
+            _reservasDao.Save(reserva);
+
+            response.HandleReservaCriada = reserva.Handle;
+
+            return response;
         }
 
         public string DevolverReserva(IReservas reserva)
@@ -81,5 +128,45 @@ namespace Benner.Reservas.Componentes
 
             return mensagem;
         }
+        /// <summary>
+        /// Método que consulta Reservas por um status específico
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public ReservaPorStatusResponse[] ReservasPorStatus(int status)
+        {
+            var reservas = _reservasDao.ReservasPorStatusEspecifico(status);
+            var response = CriaListaReservas(reservas);
+            return response.ToArray();
+        }
+
+        /// <summary>
+        /// Método que consulta Reservas por status e datas
+        /// </summary>
+        /// <param name="request">Status desejado, data de inicio e data de fim</param>
+        /// <returns></returns>
+        public ReservaPorStatusResponse[] ReservasPorStatusData(ReservaPorStatusRequest request)
+        {
+            var reservas = _reservasDao.ReservasPorStatusEspecifico(request.Status, request.DataInicio, request.DataFim);
+            var response = CriaListaReservas(reservas);
+            return response.ToArray();
+        }
+        private List<ReservaPorStatusResponse> CriaListaReservas(IList<IReservas> reservas)
+        {
+            var result = new List<ReservaPorStatusResponse>();
+            foreach (var reserva in reservas)
+            {
+                var reservaResponse = new ReservaPorStatusResponse();
+                reservaResponse.Pessoa = reserva.PessoaInstance.Nome;
+                reservaResponse.Plano = reserva.PlanoInstance.Identificador;
+                reservaResponse.Carro = reserva.CarroInstance?.Identificador;
+                reservaResponse.Status = reserva.Status;
+                reservaResponse.DataInicio = reserva.DataInicio.Value;
+                reservaResponse.DataFim = reserva.DataFim.Value;
+                result.Add(reservaResponse);
+            }
+            return result;
+        }
+
     }
 }

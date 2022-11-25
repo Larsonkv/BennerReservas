@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<DataSourcePortable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Identifier>RES_DASH_CARROSVSRESERVAS</Identifier>
+  <Name>Carros Vs Reservas</Name>
+  <Content><![CDATA[<DataSourceDefinition>
+  <FromSql Alias="A" SelectCommand="SELECT&#xA;(SELECT COUNT(*) FROM CARROS) CAR,&#xA;(SELECT COUNT(*) FROM RESERVAS WHERE STATUS=2) RES" />
+  <Fields>
+    <Field Alias="CAR" From="A" Path="CAR" />
+    <Field Alias="RES" From="A" Path="RES" />
+  </Fields>
+</DataSourceDefinition>
+]]></Content>
+  <Level>Benner</Level>
+  <ContemDadosPessoaisLgpd>false</ContemDadosPessoaisLgpd>
+</DataSourcePortable>

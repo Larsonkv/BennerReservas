@@ -312,6 +312,7 @@
       <DependentUpon>Paises.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Pessoas.cs" />
+    <Compile Include="Entidades\Pessoas.Dao.cs" />
     <Compile Include="Entidades\Pessoas.properties.cs">
       <DependentUpon>Pessoas.cs</DependentUpon>
     </Compile>
@@ -355,6 +356,7 @@
       <DependentUpon>VtWizardReserva.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IGerenciadorReservas.cs" />
+    <Compile Include="Interfaces\INotificadorReservasAprovadas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -378,9 +380,7 @@
       <Name>Benner.Reservas.Comum</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entradas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy $(TargetPath) C:\Benner\Fontes\Reservas\WebApp\Bin /Y /R

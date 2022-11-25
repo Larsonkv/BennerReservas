@@ -10,6 +10,55 @@
   <Level>Benner</Level>
   <CodeFile>~/Pages/Reservas/WizardNovaReserva.aspx.cs</CodeFile>
   <CodeInherits>ReservasWizardNovaReservaPage</CodeInherits>
-  <Widgets />
+  <Widgets>
+    <PageWidgetPortable>
+      <Id>PESSOA</Id>
+      <Title>Pessoa</Title>
+      <Order>10</Order>
+      <ShowTitle>true</ShowTitle>
+      <PortletCssClass />
+      <FontIcon />
+      <Subtitle />
+      <ChromeState>Normal</ChromeState>
+      <PortletLayout>Default</PortletLayout>
+      <WidgetTypeId>AjaxForm</WidgetTypeId>
+      <BootstrapCols>12</BootstrapCols>
+      <XmlAttributes><![CDATA[<AjaxFormAttributes>
+  <CanDelete>true</CanDelete>
+  <CanUpdate>true</CanUpdate>
+  <CanInsert>true</CanInsert>
+  <EntityViewName>VT_WIZARD_PESSOA.FORM</EntityViewName>
+  <FormMode>0</FormMode>
+  <IncludeRecordInRecentItems>true</IncludeRecordInRecentItems>
+  <UserDefinedCommandsVisible>true</UserDefinedCommandsVisible>
+</AjaxFormAttributes>
+]]></XmlAttributes>
+      <Level>Benner</Level>
+    </PageWidgetPortable>
+    <PageWidgetPortable>
+      <Id>RESERVA</Id>
+      <Title>Reserva</Title>
+      <Order>20</Order>
+      <ShowTitle>true</ShowTitle>
+      <PortletCssClass />
+      <FontIcon />
+      <Subtitle />
+      <ChromeState>Normal</ChromeState>
+      <PortletLayout>Default</PortletLayout>
+      <WidgetTypeId>AjaxForm</WidgetTypeId>
+      <BootstrapCols>12</BootstrapCols>
+      <XmlAttributes><![CDATA[<AjaxFormAttributes>
+  <CanDelete>true</CanDelete>
+  <CanUpdate>true</CanUpdate>
+  <CanInsert>true</CanInsert>
+  <EntityViewName>VT_WIZARD_RESERVA.FORM</EntityViewName>
+  <FormMode>0</FormMode>
+  <IncludeRecordInRecentItems>true</IncludeRecordInRecentItems>
+  <UserDefinedCommandsVisible>true</UserDefinedCommandsVisible>
+</AjaxFormAttributes>
+]]></XmlAttributes>
+      <Level>Benner</Level>
+    </PageWidgetPortable>
+  </Widgets>
   <Resources />
 </PagePortable>

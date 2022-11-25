@@ -3,3 +3,5 @@ C:\Benner\Fontes\Reservas\WebApp\Provider\Bin\Benner.Reservas.Comum.pdb
 C:\Benner\Fontes\Reservas\Comum\Benner.Reservas.Comum\obj\Debug\Benner.Reservas.Comum.csproj.CoreCompileInputs.cache
 C:\Benner\Fontes\Reservas\Comum\Benner.Reservas.Comum\obj\Debug\Benner.Reservas.Comum.dll
 C:\Benner\Fontes\Reservas\Comum\Benner.Reservas.Comum\obj\Debug\Benner.Reservas.Comum.pdb
+C:\Benner\Fontes\Reservas\WebApp\Provider\Bin\Benner.Reservas.Comum.xml
+C:\Benner\Fontes\Reservas\Comum\Benner.Reservas.Comum\obj\Debug\Benner.Reservas.Comum.csprojAssemblyReference.cache
